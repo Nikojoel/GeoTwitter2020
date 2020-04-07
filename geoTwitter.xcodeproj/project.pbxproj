@@ -101,6 +101,9 @@
 		6A3EC1FF243C656700D82314 /* geoTwitter */ = {
 			isa = PBXGroup;
 			children = (
+				6A3EC235243C6D5D00D82314 /* Api */,
+				6A3EC234243C6D5100D82314 /* Controllers */,
+				6A3EC233243C6D4600D82314 /* Models */,
 				6A3EC200243C656700D82314 /* AppDelegate.swift */,
 				6A3EC202243C656700D82314 /* SceneDelegate.swift */,
 				6A3EC204243C656700D82314 /* ViewController.swift */,
@@ -129,6 +132,27 @@
 				6A3EC227243C656900D82314 /* Info.plist */,
 			);
 			path = geoTwitterUITests;
+			sourceTree = "<group>";
+		};
+		6A3EC233243C6D4600D82314 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6A3EC234243C6D5100D82314 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6A3EC235243C6D5D00D82314 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
