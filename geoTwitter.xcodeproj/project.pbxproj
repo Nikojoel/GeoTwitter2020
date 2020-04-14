@@ -152,6 +152,7 @@
 		6A3EC233243C6D4600D82314 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
