@@ -17,6 +17,7 @@
 		6A3EC21B243C656900D82314 /* geoTwitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EC21A243C656900D82314 /* geoTwitterTests.swift */; };
 		6A3EC226243C656900D82314 /* geoTwitterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EC225243C656900D82314 /* geoTwitterUITests.swift */; };
 		6A9A97AB2445D2FA00122F12 /* TweetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */; };
+		DA2CFE757DA370E434042ABB /* Pods_geoTwitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC732DF73955292D0F6131C4 /* Pods_geoTwitter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,9 @@
 		6A3EC225243C656900D82314 /* geoTwitterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = geoTwitterUITests.swift; sourceTree = "<group>"; };
 		6A3EC227243C656900D82314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetInfo.swift; sourceTree = "<group>"; };
+		9DBB6CE793D9345FC464FBE3 /* Pods-geoTwitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geoTwitter.release.xcconfig"; path = "Target Support Files/Pods-geoTwitter/Pods-geoTwitter.release.xcconfig"; sourceTree = "<group>"; };
+		AC732DF73955292D0F6131C4 /* Pods_geoTwitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_geoTwitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFF9B8765AF3C52370F5EFDD /* Pods-geoTwitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geoTwitter.debug.xcconfig"; path = "Target Support Files/Pods-geoTwitter/Pods-geoTwitter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2CFE757DA370E434042ABB /* Pods_geoTwitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B513F977ACFCB5F3E0FC4C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFF9B8765AF3C52370F5EFDD /* Pods-geoTwitter.debug.xcconfig */,
+				9DBB6CE793D9345FC464FBE3 /* Pods-geoTwitter.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		528493DFCBE807434A8EC8CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC732DF73955292D0F6131C4 /* Pods_geoTwitter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6A3EC1F4243C656700D82314 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +110,8 @@
 				6A3EC219243C656900D82314 /* geoTwitterTests */,
 				6A3EC224243C656900D82314 /* geoTwitterUITests */,
 				6A3EC1FE243C656700D82314 /* Products */,
+				4B513F977ACFCB5F3E0FC4C0 /* Pods */,
+				528493DFCBE807434A8EC8CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A3EC22A243C656900D82314 /* Build configuration list for PBXNativeTarget "geoTwitter" */;
 			buildPhases = (
+				9D84F98FB72E9F45547C8143 /* [CP] Check Pods Manifest.lock */,
 				6A3EC1F9243C656700D82314 /* Sources */,
 				6A3EC1FA243C656700D82314 /* Frameworks */,
 				6A3EC1FB243C656700D82314 /* Resources */,
+				B8EF703731549DB561935E5C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,6 +310,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9D84F98FB72E9F45547C8143 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-geoTwitter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8EF703731549DB561935E5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-geoTwitter/Pods-geoTwitter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-geoTwitter/Pods-geoTwitter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-geoTwitter/Pods-geoTwitter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6A3EC1F9243C656700D82314 /* Sources */ = {
@@ -464,6 +533,7 @@
 		};
 		6A3EC22B243C656900D82314 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFF9B8765AF3C52370F5EFDD /* Pods-geoTwitter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -481,6 +551,7 @@
 		};
 		6A3EC22C243C656900D82314 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DBB6CE793D9345FC464FBE3 /* Pods-geoTwitter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
