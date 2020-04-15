@@ -7,18 +7,40 @@
 //
 
 import UIKit
+import RxSwift
 
 class ViewController: UIViewController {
     
-    //var auth = Auth()
     
+    var tweets: [TweetQuery] = [] {
+        didSet {
+            for tweet in tweets {
+                print(tweet.tweet.count)
+            }
+            
+        }
+    }
+    let api = APIFetch()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //APIFetch().fetchAPI(query: "donald trump")
+        
+        // rxswift subscription example
+        //        api.subject
+        //            .subscribe {
+        //                if let element = $0.element {
+        //                    self.tweets.append(element)
+        //                }
+        //        }
+        //        api.fetchAPI(query: "#helsinki")
+        //    }
+        
         //auth.authUserToken()
+        
+        
+        //var auth = Auth()
+        
+        
     }
-
-
 }
 
