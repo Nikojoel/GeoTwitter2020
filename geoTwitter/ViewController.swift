@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         print("starting")
-        APIFetch().fetchAPI(query: "donald trump")
+        //APIFetch().fetchAPI(query: "donald trump")
     }
 
 
