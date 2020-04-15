@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        APIFetch().fetchAPI(query: "donald trump")
+        APIFetch().fetchAPI(query: "#helsinki")
     }
 
 

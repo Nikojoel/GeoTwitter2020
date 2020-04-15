@@ -23,9 +23,9 @@ struct Tweet:Codable {
     let id: Int
     let text: String
     let user: User
-    let geo: String?
-    let coordinates: String?
-    let place: String?
+    let geo: Geo?
+    let coordinates: Coordinates?
+    let place: Place?
     let retweet_count: Int
     let favorite_count: Int
     let favorited: Bool
@@ -40,6 +40,14 @@ struct MetaData: Codable {
     
 }
 
+struct Geo:Codable {
+    let coordinates: [Double]
+}
+
+struct Coordinates:Codable {
+    let coordinates: [Double]
+}
+
 struct User: Codable {
     let id: Int
     let name: String
@@ -51,4 +59,12 @@ struct User: Codable {
     let favourites_count: Int
     let profile_background_image_url_https: String?
     let profile_image_url_https: String?
+}
+
+struct Place: Codable {
+    let id: String?
+    let url: String?
+    let place_type: String?
+    let name: String?
+    let country: String?
 }
