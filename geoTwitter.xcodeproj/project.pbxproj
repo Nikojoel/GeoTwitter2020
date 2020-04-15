@@ -143,13 +143,12 @@
 				6A3EC233243C6D4600D82314 /* Models */,
 				6A3EC200243C656700D82314 /* AppDelegate.swift */,
 				6A3EC202243C656700D82314 /* SceneDelegate.swift */,
-				6A3EC204243C656700D82314 /* MainViewController.swift */,
-				6A3EC206243C656700D82314 /* Main.storyboard */,
 				6A3EC20C243C656900D82314 /* Assets.xcassets */,
 				6A3EC20E243C656900D82314 /* LaunchScreen.storyboard */,
 				6A3EC211243C656900D82314 /* Info.plist */,
 				6A3EC209243C656700D82314 /* geoTwitter.xcdatamodeld */,
 				6A3157112447830F00DD4E75 /* tabTableViewController.swift */,
+				6A3EC206243C656700D82314 /* Main.storyboard */,
 			);
 			path = geoTwitter;
 			sourceTree = "<group>";
@@ -184,6 +183,7 @@
 		6A3EC234243C6D5100D82314 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6A3EC204243C656700D82314 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

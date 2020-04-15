@@ -15,15 +15,8 @@ class MainViewController: UIViewController {
     var auth = Auth()
     @IBOutlet weak var logInButton: UIButton!
     
-    var tweets: [TweetQuery] = [] {
-        didSet {
-            for tweet in tweets {
-                print(tweet.tweet.count)
-            }
-            
-        }
-    }
-    let api = APIFetch()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,10 +61,11 @@ class MainViewController: UIViewController {
 extension MainViewController {
     
     func checkTokenAndPresent() {
-       if (userDefaults.string(forKey: "userToken") != nil && userDefaults.string(forKey: "userSecret") != nil) {
+        if (userDefaults.string(forKey: "userToken") != nil && userDefaults.string(forKey: "userSecret") != nil) {
             let vc = tabTableViewController()
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true)
+            let navi = UINavigationController(rootViewController: vc)
+            navi.modalPresentationStyle = .fullScreen
+            present(navi, animated: true)
         }
     }
 }
