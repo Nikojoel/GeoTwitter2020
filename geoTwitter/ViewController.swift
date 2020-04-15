@@ -9,11 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //var auth = Auth()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //APIFetch().fetchAPI(query: "donald trump")
+        //auth.authUserToken()
     }
 
 
