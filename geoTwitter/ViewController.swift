@@ -11,6 +11,7 @@ import RxSwift
 
 class ViewController: UIViewController {
     
+
     var tweets: [TweetQuery] = [] {
         didSet {
             for tweet in tweets {
@@ -34,7 +35,11 @@ class ViewController: UIViewController {
         //        api.fetchAPI(query: "#helsinki")
         //    }
         
+        //auth.authUserToken()
         
-    }
+
+    //var auth = Auth()
+    
+    
 }
 
