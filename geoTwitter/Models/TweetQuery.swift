@@ -34,7 +34,7 @@ struct Tweet:Codable {
 }
 
 struct MetaData: Codable {
-    let next_results: String
+    let next_results: String?
     let query: String
     let count: Int
     
