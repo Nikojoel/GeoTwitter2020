@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Kingfisher
 
 class TweetTableViewController: UITableViewController {
     
@@ -82,6 +83,10 @@ class TweetTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetTableViewCell
         
         let tweet = tweets[indexPath.section].tweet[indexPath.row]
+        if let img = tweet.user.profile_image_url_https {
+           cell.profileImage.kf.setImage(with: URL(string: img))
+        }
+        
         cell.userName.text = tweet.user.screen_name
         cell.tweetText.text = tweet.text
         return cell
