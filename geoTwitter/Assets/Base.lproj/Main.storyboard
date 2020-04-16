@@ -221,11 +221,11 @@
                         <outlet property="dateLabel" destination="ndu-mS-xqo" id="tBd-s0-x2A"/>
                         <outlet property="followersLabel" destination="LZr-Z5-rjm" id="WjG-Rk-49n"/>
                         <outlet property="friendsLabel" destination="v9c-ZL-197" id="J35-vD-kRI"/>
-                        <outlet property="profilePicture" destination="vVu-xb-uhQ" id="OaM-jz-6m9"/>
                         <outlet property="retweetLabel" destination="kFR-MM-Zli" id="WqE-Xk-dC7"/>
                         <outlet property="testiLabel" destination="06e-Ia-puF" id="sC1-vl-rdL"/>
                         <outlet property="tweetFavoriteLabel" destination="F0I-9X-kMa" id="Dla-i8-X9M"/>
                         <outlet property="tweetTextLabel" destination="45M-Zo-ATg" id="8Qu-HB-NQZ"/>
+                        <outlet property="userPicture" destination="vVu-xb-uhQ" id="dR0-hq-yCN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YTu-37-sxN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
