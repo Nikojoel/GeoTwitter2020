@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RSy-h4-ziE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RSy-h4-ziE">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,9 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="bs1-CS-37D">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="fSq-Xs-6pJ">
+                            <rect key="frame" x="0.0" y="741" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="95" id="uag-hM-2eC" customClass="TweetTableViewCell" customModule="geoTwitter">
-                                <rect key="frame" x="0.0" y="28" width="375" height="95"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uag-hM-2eC" id="IXw-qP-RUC">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
@@ -88,7 +98,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingIndicator" destination="fSq-Xs-6pJ" id="GzO-wo-LBL"/>
                         <outlet property="logInButton" destination="gZw-kB-lrS" id="dox-CM-abM"/>
+                        <outlet property="searchBar" destination="bs1-CS-37D" id="mjh-ir-3eS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYI-Tc-DqB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -240,10 +252,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.up.arrow.down" catalog="system" width="128" height="96"/>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <image name="person.2.fill" catalog="system" width="128" height="80"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="arrow.up.arrow.down" catalog="system" width="64" height="48"/>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
+        <image name="person.2.fill" catalog="system" width="64" height="40"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="profPic1" width="360" height="231.5"/>
     </resources>
 </document>

@@ -13,6 +13,8 @@ class TweetTableViewController: UITableViewController {
     
     
     @IBOutlet weak var logInButton: UIBarButtonItem!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     let api = APIFetch()
     let auth = Auth()
@@ -20,21 +22,26 @@ class TweetTableViewController: UITableViewController {
     var tweets: [TweetQuery] = [] {
         didSet {
             tableView.reloadData()
+            loadingIndicator.isHidden = true
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.isHidden = true
-        
+        self.view.backgroundColor = .white
+        loadingIndicator.isHidden = true
+        searchBar.delegate = self
+        searchBar.isHidden = true
+        self.tableView.keyboardDismissMode = .onDrag
         if (userDefaults.string(forKey: "userToken") != nil && userDefaults.string(forKey: "userSecret") != nil) {
-            tableView.isHidden = false
+            logInButton.isEnabled = false
+            searchBar.isHidden = false
+            
             subsrcibeAndFetch()
         }
         
     }
-    
+    // MARK: - Actions
     @IBAction func tapLogInButton(_ sender: UIBarButtonItem) {
         auth.authUserToken()
         _ = auth.status
@@ -42,6 +49,7 @@ class TweetTableViewController: UITableViewController {
                 if $0.element ?? false {
                     self.logInButton.isEnabled = false
                     self.tableView.isHidden = false
+                    self.searchBar.isHidden = false
                     self.subsrcibeAndFetch()
                 }
         }
@@ -80,6 +88,7 @@ class TweetTableViewController: UITableViewController {
     }
 }
 
+    //MARK: - custom functions
 extension TweetTableViewController {
     
     func subsrcibeAndFetch() {
@@ -89,6 +98,26 @@ extension TweetTableViewController {
                     self?.tweets = [element]
                 }
         }
-        self.api.fetchAPI(query: "#helsinki")
+        //self.api.fetchAPI(query: "#helsinki")
     }
 }
+
+    //MARK: - Searchbar delegate
+extension TweetTableViewController: UISearchBarDelegate {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        loadingIndicator.isHidden = false
+        self.api.fetchAPI(query: searchBar.text)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+    }
+    
+
+}
+
+
