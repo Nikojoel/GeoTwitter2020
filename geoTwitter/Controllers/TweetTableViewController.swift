@@ -44,16 +44,19 @@ class TweetTableViewController: UITableViewController {
     }
     // MARK: - Actions
     @IBAction func tapLogInButton(_ sender: UIBarButtonItem) {
+       
         auth.authUserToken()
-        _ = auth.status
-            .subscribe {
-                if $0.element ?? false {
+            .subscribe(
+                onNext: { element in
+                print("next")
+                if element {
                     self.logInButton.isEnabled = false
                     self.tableView.isHidden = false
                     self.searchBar.isHidden = false
                     self.subsrcibeAndFetch()
                 }
-        }
+            }).dispose()
+            
     }
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
