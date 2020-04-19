@@ -11,36 +11,38 @@ import RxSwift
 
 class Auth {
     
-    var oAuth: OAuth1Swift?
-    var status = PublishSubject<Bool>()
+    private var oAuth: OAuth1Swift?
     
-    func authUserToken() {
+    func authUserToken() -> Observable<Bool> {
         // Create an instance and retain it
-       
-        oAuth = OAuth1Swift(
-            consumerKey:    Keys.consumerKey.rawValue,
-            consumerSecret: Keys.consumerSecret.rawValue,
-            requestTokenUrl: "https://api.twitter.com/oauth/request_token",
-            authorizeUrl:    "https://api.twitter.com/oauth/authorize",
-            accessTokenUrl:  "https://api.twitter.com/oauth/access_token"
-        )
-        
-        // Authorize
-        oAuth?.authorize(
-        withCallbackURL: URL(string: "fi.metropolia.geoTwitter://")!) { result in
-            switch result {
-            case .success(let (credential, response, parameters)):
-                // Append user token & secret to user default
-                let userData = UserDefaults.standard
-                userData.setValue(credential.oauthToken, forKey: "userToken")
-                userData.setValue(credential.oauthTokenSecret, forKey: "userSecret")
-                
-                self.status.onNext(true)
-                self.status.onCompleted()
-            case .failure(let error):
-                self.status.onError(error)
-                print(error.localizedDescription)
+        return Observable.deferred {
+            
+            self.oAuth = OAuth1Swift(
+                consumerKey:    Keys.consumerKey.rawValue,
+                consumerSecret: Keys.consumerSecret.rawValue,
+                requestTokenUrl: "https://api.twitter.com/oauth/request_token",
+                authorizeUrl:    "https://api.twitter.com/oauth/authorize",
+                accessTokenUrl:  "https://api.twitter.com/oauth/access_token"
+            )
+            
+            // Authorize
+            self.oAuth?.authorize(
+            withCallbackURL: URL(string: "fi.metropolia.geoTwitter://")!) { result in
+                switch result {
+                case .success(let (credential, _, _)):
+                    // Append user token & secret to user default
+                    let userData = UserDefaults.standard
+                    userData.setValue(credential.oauthToken, forKey: "userToken")
+                    userData.setValue(credential.oauthTokenSecret, forKey: "userSecret")
+                    
+                case .failure(let error):
+                    
+                    print(error.localizedDescription)
+                    
+                }
             }
+            return .just(true)
+            
         }
         
     }
