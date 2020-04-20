@@ -91,6 +91,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="63R-Wz-Vzc">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="RV9-6v-VxB"/>
                         <barButtonItem key="rightBarButtonItem" title="Log In" id="gZw-kB-lrS">
                             <connections>
                                 <action selector="tapLogInButton:" destination="zSn-bd-OrK" id="uoC-aS-Yt3"/>
