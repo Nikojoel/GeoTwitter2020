@@ -7,6 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Account-->
+        <scene sceneID="QK5-md-LFh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Account" id="FeN-8F-to8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="SWy-La-x6u"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jl3-bq-Jtw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2964" y="-354"/>
+        </scene>
         <!--Tweet Table View Controller-->
         <scene sceneID="niz-6t-uo7">
             <objects>
@@ -91,7 +101,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="63R-Wz-Vzc">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="RV9-6v-VxB"/>
+                        <barButtonItem key="leftBarButtonItem" title="Account" id="RV9-6v-VxB">
+                            <connections>
+                                <segue destination="FeN-8F-to8" kind="show" id="tk1-Nj-23U"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Log In" id="gZw-kB-lrS">
                             <connections>
                                 <action selector="tapLogInButton:" destination="zSn-bd-OrK" id="uoC-aS-Yt3"/>
