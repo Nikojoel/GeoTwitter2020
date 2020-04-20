@@ -16,7 +16,22 @@ class TwitterApi {
     func searchTweet(_ query: String, count: Int = 100, lang: String = "en", type: String = "mixed") -> Observable<TweetQuery> {
         let queryEncoded = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let url = baseURL + EndPoint.query.rawValue + "?q=\(queryEncoded ?? "")&count=\(count)&lang=\(lang)&type=\(type)"
-        print("requesting url: ", url)
         return networkService.requestGET(url: url)
+    }
+    
+    func myAccount() -> Observable<Account> {
+        return networkService.requestGET(url: baseURL + EndPoint.account.rawValue)
+    }
+    
+    func listDirectMessages() -> Observable<MessageList> {
+        return networkService.requestGET(url: baseURL + EndPoint.listDirectMessages.rawValue)
+    }
+    
+    func showDirectMessage(id: Int) -> Observable<DirectMessage> {
+        return networkService.requestGET(url: baseURL + EndPoint.showDirectMessage.rawValue + "?id=\(id)")
+    }
+    
+    func showUser(id: String) -> Observable<Account> {
+        return networkService.requestGET(url: baseURL + EndPoint.showUser.rawValue + "?id=\(id)")
     }
 }

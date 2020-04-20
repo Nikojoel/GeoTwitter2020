@@ -14,6 +14,11 @@
 		6A2D8CEA244CD0A300270DD6 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8CE9244CD0A300270DD6 /* EndPoint.swift */; };
 		6A2D8CEC244D5D3300270DD6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8CEB244D5D3300270DD6 /* NetworkService.swift */; };
 		6A2D8CEE244D657D00270DD6 /* TwitterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8CED244D657D00270DD6 /* TwitterApi.swift */; };
+		6A2D8CF6244D74CE00270DD6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8CF5244D74CE00270DD6 /* Account.swift */; };
+		6A2D8CF8244D7B8700270DD6 /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8CF7244D7B8700270DD6 /* MessageList.swift */; };
+		6A2D8CFA244D7CA200270DD6 /* DirectMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8CF9244D7CA200270DD6 /* DirectMessage.swift */; };
+		6A2D8CFC244D86F100270DD6 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2D8CFB244D86F100270DD6 /* Account.storyboard */; };
+		6A2D8CFE244D871C00270DD6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8CFD244D871C00270DD6 /* AccountViewController.swift */; };
 		6A3157062447173400DD4E75 /* TweetQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3157042446F89C00DD4E75 /* TweetQuery.swift */; };
 		6A3157122447830F00DD4E75 /* TweetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3157112447830F00DD4E75 /* TweetTableViewController.swift */; };
 		6A3EC201243C656700D82314 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EC200243C656700D82314 /* AppDelegate.swift */; };
@@ -54,6 +59,11 @@
 		6A2D8CE9244CD0A300270DD6 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		6A2D8CEB244D5D3300270DD6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6A2D8CED244D657D00270DD6 /* TwitterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterApi.swift; sourceTree = "<group>"; };
+		6A2D8CF5244D74CE00270DD6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		6A2D8CF7244D7B8700270DD6 /* MessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
+		6A2D8CF9244D7CA200270DD6 /* DirectMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessage.swift; sourceTree = "<group>"; };
+		6A2D8CFB244D86F100270DD6 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		6A2D8CFD244D871C00270DD6 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		6A3157042446F89C00DD4E75 /* TweetQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetQuery.swift; sourceTree = "<group>"; };
 		6A3157112447830F00DD4E75 /* TweetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
 		6A3EC1FD243C656700D82314 /* geoTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geoTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +136,7 @@
 				6A3EC20C243C656900D82314 /* Assets.xcassets */,
 				6A3EC20E243C656900D82314 /* LaunchScreen.storyboard */,
 				6A3EC206243C656700D82314 /* Main.storyboard */,
+				6A2D8CFB244D86F100270DD6 /* Account.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -191,6 +202,9 @@
 			children = (
 				6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */,
 				6A3157042446F89C00DD4E75 /* TweetQuery.swift */,
+				6A2D8CF5244D74CE00270DD6 /* Account.swift */,
+				6A2D8CF7244D7B8700270DD6 /* MessageList.swift */,
+				6A2D8CF9244D7CA200270DD6 /* DirectMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,6 +215,7 @@
 				6A3157112447830F00DD4E75 /* TweetTableViewController.swift */,
 				6A00BAB1244839C400C633B0 /* TweetTableViewCell.swift */,
 				6A00BAB32448571E00C633B0 /* SingleTweetController.swift */,
+				6A2D8CFD244D871C00270DD6 /* AccountViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,6 +340,7 @@
 			files = (
 				6A3EC210243C656900D82314 /* LaunchScreen.storyboard in Resources */,
 				6A3EC20D243C656900D82314 /* Assets.xcassets in Resources */,
+				6A2D8CFC244D86F100270DD6 /* Account.storyboard in Resources */,
 				6A3EC208243C656700D82314 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,14 +412,18 @@
 				6A3157062447173400DD4E75 /* TweetQuery.swift in Sources */,
 				6A3EC201243C656700D82314 /* AppDelegate.swift in Sources */,
 				6A3EC203243C656700D82314 /* SceneDelegate.swift in Sources */,
+				6A2D8CFA244D7CA200270DD6 /* DirectMessage.swift in Sources */,
 				6A2D8CEE244D657D00270DD6 /* TwitterApi.swift in Sources */,
 				6A3157122447830F00DD4E75 /* TweetTableViewController.swift in Sources */,
 				6A00BAB2244839C400C633B0 /* TweetTableViewCell.swift in Sources */,
+				6A2D8CFE244D871C00270DD6 /* AccountViewController.swift in Sources */,
 				6A2D8CEA244CD0A300270DD6 /* EndPoint.swift in Sources */,
+				6A2D8CF6244D74CE00270DD6 /* Account.swift in Sources */,
 				6ABBA6C62446F0E50013DC78 /* Keys.swift in Sources */,
 				6A9A97AB2445D2FA00122F12 /* TweetInfo.swift in Sources */,
 				6A00BAB82448606800C633B0 /* APIfetch.swift in Sources */,
 				6A00BAB62448604900C633B0 /* Auth.swift in Sources */,
+				6A2D8CF8244D7B8700270DD6 /* MessageList.swift in Sources */,
 				6A2D8CEC244D5D3300270DD6 /* NetworkService.swift in Sources */,
 				6A00BAB42448571E00C633B0 /* SingleTweetController.swift in Sources */,
 			);
