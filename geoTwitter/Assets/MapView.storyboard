@@ -15,33 +15,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="BMf-dr-C6A">
-                                <rect key="frame" x="20" y="72" width="374" height="760"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nEn-Lr-8V4">
+                                <rect key="frame" x="20" y="58" width="374" height="816"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locations for #test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXh-pU-Nbr">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <searchBar contentMode="redraw" placeholder="Search for hashtags" translatesAutoresizingMaskIntoConstraints="NO" id="KpR-WV-hVR">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iCh-k1-gXz">
-                                        <rect key="frame" x="0.0" y="78" width="374" height="682"/>
+                                        <rect key="frame" x="0.0" y="56" width="374" height="760"/>
                                     </mapView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="3eB-Nh-aqL" firstAttribute="bottom" secondItem="BMf-dr-C6A" secondAttribute="bottom" constant="30" id="43I-BB-Z8P"/>
-                            <constraint firstItem="BMf-dr-C6A" firstAttribute="leading" secondItem="3eB-Nh-aqL" secondAttribute="leading" constant="20" id="DvE-kd-I74"/>
-                            <constraint firstItem="BMf-dr-C6A" firstAttribute="top" secondItem="3eB-Nh-aqL" secondAttribute="top" constant="28" id="SYd-H4-C75"/>
-                            <constraint firstItem="3eB-Nh-aqL" firstAttribute="trailing" secondItem="BMf-dr-C6A" secondAttribute="trailing" constant="20" id="shf-71-lWh"/>
+                            <constraint firstItem="nEn-Lr-8V4" firstAttribute="leading" secondItem="3eB-Nh-aqL" secondAttribute="leading" constant="20" id="1JL-8a-UeZ"/>
+                            <constraint firstAttribute="bottom" secondItem="nEn-Lr-8V4" secondAttribute="bottom" constant="22" id="Ypx-bD-26i"/>
+                            <constraint firstItem="3eB-Nh-aqL" firstAttribute="trailing" secondItem="nEn-Lr-8V4" secondAttribute="trailing" constant="20" id="mOM-wc-EmG"/>
+                            <constraint firstItem="nEn-Lr-8V4" firstAttribute="top" secondItem="3eB-Nh-aqL" secondAttribute="top" constant="14" id="rTq-FP-L38"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3eB-Nh-aqL"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="iCh-k1-gXz" id="Xth-TN-iV8"/>
-                        <outlet property="resultLabel" destination="HXh-pU-Nbr" id="I0u-7U-RX0"/>
+                        <outlet property="searchBar" destination="KpR-WV-hVR" id="3sN-51-eMp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mUn-Uu-lag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -13,23 +13,28 @@ import RxSwift
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     private let api = ReverseGeoApi()
     private let disposeBag = DisposeBag()
     private let twitterApi = TwitterApi()
-    private var tweetsNoLocation = [TweetQuery]()
     var locations: [Tweet] = [] {
         didSet {
             for loc in locations {
-                reverseGeoCode(loc.user.location)
+                reverseGeoCode(loc)
             }
         }
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.showsScale = true
+        searchBar.delegate = self
+    }
+    
+    func searchForTweets(_ keyWord: String) {
         var temp = [Tweet]()
-        twitterApi.searchTweet("helsinki").subscribe(onNext: { item in
+        twitterApi.searchTweet(keyWord).subscribe(onNext: { item in
             for tweet in item.tweet {
                 if tweet.user.location != "" {
                     temp.append(tweet)
@@ -37,21 +42,35 @@ class MapViewController: UIViewController {
                 }
             }
             self.locations = temp
-            print("before dispose \(self.locations.count)")
         }).disposed(by: disposeBag)
     }
     
-    func reverseGeoCode(_ cityName: String) {
-        api.useReverseGeoCode(cityName).subscribe(onNext: {item in
-            print("\(item.results[0])")
+    func reverseGeoCode(_ tweet: Tweet) {
+        api.useReverseGeoCode(tweet.user.location).subscribe(onNext: {item in
             // Insert more data to the annotation
             let annotation = MKPointAnnotation()
-            annotation.title = "moi"
-            
-            annotation.coordinate = CLLocationCoordinate2D(latitude: item.results[0].geometry["lat"] ?? 0, longitude:
-                item.results[0].geometry["lng"] ?? 0)
-            self.mapView.addAnnotation(annotation)
+            if item.results.count != 0 {
+                annotation.title = tweet.user.name
+                annotation.subtitle = tweet.user.description
+                annotation.coordinate = CLLocationCoordinate2D(latitude: item.results[0].geometry["lat"] ?? 0, longitude:
+                    item.results[0].geometry["lng"] ?? 0)
+                self.mapView.addAnnotation(annotation)
+            }
         }).disposed(by: disposeBag)
     }
 }
+
+extension MapViewController: UISearchBarDelegate {
+       func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+           self.searchForTweets(searchBar.text ?? "")
+       }
+       
+       func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+           //self.searchBar.endEditing(true)
+       }
+       
+       func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+           //self.searchBar.endEditing(true)
+       }
+   }
 

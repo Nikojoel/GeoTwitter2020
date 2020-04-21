@@ -16,11 +16,10 @@ class NetworkServiceNoAuth {
     func apiFetchGET<T:Decodable>(url: String) -> Observable<T> {
         return Observable.create { observer -> Disposable in
             
-            // let formatUrl = URL(string: url)
             guard let formatUrl = URL(string: url) else {
                 fatalError("url error")
             }
-           
+
             let task = URLSession.shared.dataTask(with: formatUrl) { data, response, error in
                 if let error = error {
                     print("error in urlsession \(error)")
