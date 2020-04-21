@@ -24,6 +24,7 @@
 		6A2D8D05244EDC3300270DD6 /* NetworkServiceNoAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8D03244EDC3300270DD6 /* NetworkServiceNoAuth.swift */; };
 		6A2D8D06244EDC3300270DD6 /* ReverseGeoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8D04244EDC3300270DD6 /* ReverseGeoApi.swift */; };
 		6A2D8D07244EDC4C00270DD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3EC206243C656700D82314 /* Main.storyboard */; };
+		6A2D8D09244EDF1600270DD6 /* TweetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8D08244EDF1600270DD6 /* TweetLocation.swift */; };
 		6A3157062447173400DD4E75 /* TweetQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3157042446F89C00DD4E75 /* TweetQuery.swift */; };
 		6A3157122447830F00DD4E75 /* TweetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3157112447830F00DD4E75 /* TweetTableViewController.swift */; };
 		6A3EC201243C656700D82314 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EC200243C656700D82314 /* AppDelegate.swift */; };
@@ -72,6 +73,7 @@
 		6A2D8D01244EDC1700270DD6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6A2D8D03244EDC3300270DD6 /* NetworkServiceNoAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceNoAuth.swift; sourceTree = "<group>"; };
 		6A2D8D04244EDC3300270DD6 /* ReverseGeoApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseGeoApi.swift; sourceTree = "<group>"; };
+		6A2D8D08244EDF1600270DD6 /* TweetLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetLocation.swift; sourceTree = "<group>"; };
 		6A3157042446F89C00DD4E75 /* TweetQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetQuery.swift; sourceTree = "<group>"; };
 		6A3157112447830F00DD4E75 /* TweetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
 		6A3EC1FD243C656700D82314 /* geoTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geoTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +211,7 @@
 		6A3EC233243C6D4600D82314 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6A2D8D08244EDF1600270DD6 /* TweetLocation.swift */,
 				6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */,
 				6A3157042446F89C00DD4E75 /* TweetQuery.swift */,
 				6A2D8CF5244D74CE00270DD6 /* Account.swift */,
@@ -439,6 +442,7 @@
 				6A9A97AB2445D2FA00122F12 /* TweetInfo.swift in Sources */,
 				6A00BAB82448606800C633B0 /* APIfetch.swift in Sources */,
 				6A00BAB62448604900C633B0 /* Auth.swift in Sources */,
+				6A2D8D09244EDF1600270DD6 /* TweetLocation.swift in Sources */,
 				6A2D8CF8244D7B8700270DD6 /* MessageList.swift in Sources */,
 				6A2D8CEC244D5D3300270DD6 /* NetworkService.swift in Sources */,
 				6A00BAB42448571E00C633B0 /* SingleTweetController.swift in Sources */,
