@@ -66,11 +66,11 @@ extension MapViewController: UISearchBarDelegate {
        }
        
        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-           //self.searchBar.endEditing(true)
+           self.searchBar.endEditing(true)
        }
        
        func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-           //self.searchBar.endEditing(true)
+           self.searchBar.endEditing(true)
        }
    }
 

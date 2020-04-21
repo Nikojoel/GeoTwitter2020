@@ -13,7 +13,8 @@ class ReverseGeoApi {
     private let networkService = NetworkServiceNoAuth()
     
     func useReverseGeoCode(_ cityName: String) -> Observable<TweetLocation> {
-        let url = "https://api.opencagedata.com/geocode/v1/json?q=\(cityName)&key=\(Keys.reverseGeoApi.rawValue)"
+        let encodeCity = cityName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let url = "https://api.opencagedata.com/geocode/v1/json?q=\(encodeCity ?? "")&key=\(Keys.reverseGeoApi.rawValue)"
         return networkService.apiFetchGET(url: url)
     }
 }
