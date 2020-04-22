@@ -26,7 +26,7 @@ class DirectMessagesViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.rowHeight = 80
-    
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         listMessages()
     }
     
@@ -47,11 +47,6 @@ class DirectMessagesViewController: UIViewController {
 
 
 extension DirectMessagesViewController: UITableViewDataSource {
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
