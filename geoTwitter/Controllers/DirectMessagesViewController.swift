@@ -23,7 +23,7 @@ class DirectMessagesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
+        
         tableView.dataSource = self
         tableView.rowHeight = 80
     
@@ -43,6 +43,8 @@ class DirectMessagesViewController: UIViewController {
 
 
 }
+
+
 
 extension DirectMessagesViewController: UITableViewDataSource {
     
