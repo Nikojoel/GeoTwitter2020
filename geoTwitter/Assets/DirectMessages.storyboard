@@ -10,17 +10,79 @@
         <!--Direct Messages View Controller-->
         <scene sceneID="w8p-bl-VAr">
             <objects>
-                <viewController id="D3d-hp-uZT" customClass="DirectMessagesViewController" customModule="geoTwitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="D3d-hp-uZT" customClass="DirectMessagesViewController" customModule="geoTwitter" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fXA-Ll-uAT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fj4-ng-5h1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" rowHeight="80" id="yEh-qr-IdZ" customClass="DirectMessageTableViewCell" customModule="geoTwitter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yEh-qr-IdZ" id="WRz-u7-CYM">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profPic1" translatesAutoresizingMaskIntoConstraints="NO" id="uxr-QC-Gch">
+                                                    <rect key="frame" x="10" y="15" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="eEI-dQ-Srf"/>
+                                                        <constraint firstAttribute="width" constant="50" id="vzu-D9-9Ae"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWw-EA-foc">
+                                                    <rect key="frame" x="70" y="11" width="53" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBn-dV-TBX">
+                                                    <rect key="frame" x="70" y="46" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GWw-EA-foc" firstAttribute="top" secondItem="WRz-u7-CYM" secondAttribute="topMargin" id="1tl-0x-bTK"/>
+                                                <constraint firstItem="uxr-QC-Gch" firstAttribute="leading" secondItem="WRz-u7-CYM" secondAttribute="leading" constant="10" id="EaK-V6-fvj"/>
+                                                <constraint firstItem="uxr-QC-Gch" firstAttribute="top" secondItem="WRz-u7-CYM" secondAttribute="top" constant="15" id="N9q-2e-zQ2"/>
+                                                <constraint firstItem="OBn-dV-TBX" firstAttribute="top" secondItem="GWw-EA-foc" secondAttribute="bottom" constant="8" id="wv4-ZY-NgJ"/>
+                                                <constraint firstItem="OBn-dV-TBX" firstAttribute="leading" secondItem="uxr-QC-Gch" secondAttribute="trailing" constant="10" id="xQG-U6-twY"/>
+                                                <constraint firstItem="GWw-EA-foc" firstAttribute="leading" secondItem="uxr-QC-Gch" secondAttribute="trailing" constant="10" id="zGE-bd-qf9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lastMessage" destination="OBn-dV-TBX" id="5WM-Th-5V0"/>
+                                            <outlet property="profPic" destination="uxr-QC-Gch" id="B2O-yY-4uu"/>
+                                            <outlet property="screenName" destination="GWw-EA-foc" id="13E-4G-Kai"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6x5-mf-SYe" firstAttribute="trailing" secondItem="Fj4-ng-5h1" secondAttribute="trailing" id="D5a-p9-8yP"/>
+                            <constraint firstItem="Fj4-ng-5h1" firstAttribute="top" secondItem="6x5-mf-SYe" secondAttribute="top" id="Fup-2s-Fr8"/>
+                            <constraint firstItem="Fj4-ng-5h1" firstAttribute="leading" secondItem="6x5-mf-SYe" secondAttribute="leading" id="j44-cz-6xP"/>
+                            <constraint firstItem="6x5-mf-SYe" firstAttribute="bottom" secondItem="Fj4-ng-5h1" secondAttribute="bottom" id="vz1-wO-Cwh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6x5-mf-SYe"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Fj4-ng-5h1" id="F5O-f9-twJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5R-Of-7tw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="137"/>
+            <point key="canvasLocation" x="47.826086956521742" y="136.60714285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="profPic1" width="360" height="231.5"/>
+    </resources>
 </document>

@@ -8,7 +8,7 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
+import Kingfisher
 
 class DirectMessagesViewController: UIViewController {
 
@@ -16,24 +16,18 @@ class DirectMessagesViewController: UIViewController {
     private let api = TwitterApi()
     private let disposeBag = DisposeBag()
     private var messages:[Event] = []
+    private var users:[Account] = []
+    private var myMessages: [MyMessages] = []
+    @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        api.listDirectMessages()
-            .debug("directmessage")
-            .subscribe(onNext: { [weak self] item in
-            
-                for item in item.events {
-                    self?.messages.append(item)
-                }
-                print(self?.messages.count ?? 0)
-        })
-        .disposed(by: disposeBag)
-        
-        
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 80
+    
+        listMessages()
     }
     
 
@@ -47,4 +41,65 @@ class DirectMessagesViewController: UIViewController {
     }
     */
 
+
+}
+
+extension DirectMessagesViewController: UITableViewDataSource {
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return myMessages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! DirectMessageTableViewCell
+        let message = myMessages[indexPath.row]
+        cell.profPic.kf.setImage(with: URL(string: message.account.profile_image_url_https))
+        cell.screenName.text = message.account.screen_name
+        cell.lastMessage.text = "\(message.messages[message.messages.count - 1].message_create.message_data.text)"
+        return cell
+    }
+}
+
+extension DirectMessagesViewController {
+    func listMessages() {
+        api.listDirectMessages()
+            .subscribe(onNext: {item in
+                for item in item.events {
+                    self.messages.append(item)
+                    self.api.showUser(id: item.message_create.sender_id)
+                        .subscribe(onNext: { account in
+                            let count = self.myMessages.filter { i in
+                                i.account.id == account.id
+                            }
+                            if count.count == 0 {
+                                self.myMessages.append(MyMessages(account: account))
+                            }
+                            for myMsg in self.myMessages {
+                                for msg in self.messages {
+                                    if msg.message_create.sender_id == myMsg.account.id_str {
+                                        myMsg.messages.append(msg)
+                                    }
+                                }
+                            }
+                            for x in self.myMessages {
+                                print(x.account.name)
+                                for i in x.messages {
+                                    print(i.message_create.message_data)
+                                }
+                            }
+                        }, onCompleted: {
+                            self.tableView.reloadData()
+                        })
+                        
+                        .disposed(by: self.disposeBag)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
 }
