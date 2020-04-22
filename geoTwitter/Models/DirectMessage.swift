@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct MessageList: Codable {
+    let next_cursor: String?
+    let events: [Event]
+}
+
 struct DirectMessage: Codable {
     let event: Event
 }

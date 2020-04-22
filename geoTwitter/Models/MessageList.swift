@@ -8,12 +8,5 @@
 
 import Foundation
 
-struct MessageList: Codable {
-    let next_curson: String
-    let events: [Events]
-}
 
-struct Events: Codable {
-    let id: Int
-    let created_timestamp: String
-}
+

@@ -34,6 +34,8 @@ class NetworkService {
             self.oauth?.client.get(url) { result in
                 switch result {
                 case .success(let response):
+//                    let string = String(data: response.data, encoding: .utf8)
+//                    print(string)
                     do {
                         let decoder = JSONDecoder()
                         let decoded = try decoder.decode(T.self, from: response.data)
@@ -47,7 +49,7 @@ class NetworkService {
                 }
             }
             return Disposables.create {
-                print("disposable created")
+                print("disposed")
             }
         }
     }
