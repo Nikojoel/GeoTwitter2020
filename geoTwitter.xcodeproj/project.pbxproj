@@ -17,7 +17,6 @@
 		6A2D8CF6244D74CE00270DD6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8CF5244D74CE00270DD6 /* Account.swift */; };
 		6A2D8CF8244D7B8700270DD6 /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8CF7244D7B8700270DD6 /* MessageList.swift */; };
 		6A2D8CFA244D7CA200270DD6 /* DirectMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8CF9244D7CA200270DD6 /* DirectMessage.swift */; };
-		6A2D8CFC244D86F100270DD6 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2D8CFB244D86F100270DD6 /* Account.storyboard */; };
 		6A2D8CFE244D871C00270DD6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8CFD244D871C00270DD6 /* AccountViewController.swift */; };
 		6A2D8D00244EDBF500270DD6 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2D8CFF244EDBF500270DD6 /* MapView.storyboard */; };
 		6A2D8D02244EDC1700270DD6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8D01244EDC1700270DD6 /* MapViewController.swift */; };
@@ -67,7 +66,6 @@
 		6A2D8CF5244D74CE00270DD6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		6A2D8CF7244D7B8700270DD6 /* MessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
 		6A2D8CF9244D7CA200270DD6 /* DirectMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessage.swift; sourceTree = "<group>"; };
-		6A2D8CFB244D86F100270DD6 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		6A2D8CFD244D871C00270DD6 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		6A2D8CFF244EDBF500270DD6 /* MapView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
 		6A2D8D01244EDC1700270DD6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				6A3EC20C243C656900D82314 /* Assets.xcassets */,
 				6A3EC20E243C656900D82314 /* LaunchScreen.storyboard */,
 				6A3EC206243C656700D82314 /* Main.storyboard */,
-				6A2D8CFB244D86F100270DD6 /* Account.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -356,7 +353,6 @@
 				6A2D8D07244EDC4C00270DD6 /* Main.storyboard in Resources */,
 				6A3EC210243C656900D82314 /* LaunchScreen.storyboard in Resources */,
 				6A3EC20D243C656900D82314 /* Assets.xcassets in Resources */,
-				6A2D8CFC244D86F100270DD6 /* Account.storyboard in Resources */,
 				6A2D8D00244EDBF500270DD6 /* MapView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
