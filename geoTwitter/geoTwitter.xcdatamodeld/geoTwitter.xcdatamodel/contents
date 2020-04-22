@@ -1,4 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Account" representedClassName="Account" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptioni" optional="YES" attributeType="String"/>
+        <attribute name="followers_count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="friends_count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id_str" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="profile_image_url_https" optional="YES" attributeType="String"/>
+        <attribute name="profile_location" optional="YES" attributeType="String"/>
+        <attribute name="screen_name" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Coordinates" representedClassName="Coordinates" syncable="YES" codeGenerationType="class">
+        <attribute name="coordinates" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="DirectMessage" representedClassName="DirectMessage" syncable="YES" codeGenerationType="class">
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event"/>
+    </entity>
+    <entity name="Entity1" representedClassName="Entity1" syncable="YES" codeGenerationType="class">
+        <attribute name="khb" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
+        <attribute name="created_timestamp" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="message_create" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Message"/>
+    </entity>
+    <entity name="Events" representedClassName="Events" syncable="YES" codeGenerationType="class">
+        <attribute name="created_timestamp" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Geo" representedClassName="Geo" syncable="YES" codeGenerationType="class">
+        <attribute name="coordinates" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Message" representedClassName="Message" syncable="YES" codeGenerationType="class">
+        <attribute name="sender_id" optional="YES" attributeType="String"/>
+        <relationship name="message_data" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MessageData"/>
+    </entity>
+    <entity name="MessageData" representedClassName="MessageData" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MessageList" representedClassName="MessageList" syncable="YES" codeGenerationType="class">
+        <attribute name="next_curson" optional="YES" attributeType="String"/>
+        <relationship name="events" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Events"/>
+    </entity>
+    <entity name="MetaData" representedClassName="MetaData" syncable="YES" codeGenerationType="class">
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="next_results" optional="YES" attributeType="String"/>
+        <attribute name="query" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Place" representedClassName="Place" syncable="YES" codeGenerationType="class">
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="place_type" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Tweet" representedClassName="Tweet" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="String"/>
+        <attribute name="favorite_count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="favorited" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lang" optional="YES" attributeType="String"/>
+        <attribute name="retweet_count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="retweeted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="coordinates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coordinates"/>
+        <relationship name="geo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Geo"/>
+        <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
+    </entity>
+    <entity name="TweetQuery" representedClassName="TweetQuery" syncable="YES" codeGenerationType="class">
+        <relationship name="metaData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MetaData"/>
+        <relationship name="tweet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tweet"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptioni" optional="YES" attributeType="String"/>
+        <attribute name="favourites_count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="followers_count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="friends_count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="profile_background_image_url_https" optional="YES" attributeType="String"/>
+        <attribute name="profile_image_url_https" optional="YES" attributeType="String"/>
+        <attribute name="screen_name" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Account" positionX="-125.84375" positionY="186.25390625" width="128" height="193"/>
+        <element name="Coordinates" positionX="45" positionY="189" width="128" height="58"/>
+        <element name="DirectMessage" positionX="-111.01953125" positionY="-10.51953125" width="128" height="58"/>
+        <element name="Entity1" positionX="18" positionY="153" width="128" height="58"/>
+        <element name="Event" positionX="36" positionY="108" width="128" height="103"/>
+        <element name="Events" positionX="45" positionY="171" width="128" height="73"/>
+        <element name="Geo" positionX="36" positionY="180" width="128" height="58"/>
+        <element name="Message" positionX="9" positionY="99" width="128" height="73"/>
+        <element name="MessageData" positionX="-129.13671875" positionY="68.234375" width="128" height="58"/>
+        <element name="MessageList" positionX="27" positionY="135" width="128" height="73"/>
+        <element name="MetaData" positionX="81" positionY="234" width="128" height="88"/>
+        <element name="Place" positionX="-128.9140625" positionY="269.3125" width="128" height="118"/>
+        <element name="Tweet" positionX="63" positionY="189" width="128" height="223"/>
+        <element name="TweetQuery" positionX="54" positionY="180" width="128" height="73"/>
+        <element name="User" positionX="74.96484375" positionY="-159.4453125" width="116.73828125" height="193"/>
+    </elements>
 </model>
