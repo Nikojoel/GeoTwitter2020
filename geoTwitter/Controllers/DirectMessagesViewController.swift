@@ -11,7 +11,7 @@ import RxSwift
 import Kingfisher
 
 class DirectMessagesViewController: UIViewController {
-
+    
     
     private let api = TwitterApi()
     private let disposeBag = DisposeBag()
@@ -30,21 +30,17 @@ class DirectMessagesViewController: UIViewController {
         listMessages()
     }
     
-
-    /*
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let index = tableView.indexPathForSelectedRow else {return}
+        if let destination = segue.destination as? UserMessagesViewController {
+            destination.messages = myMessages[index.row]
+        }
     }
-    */
-
-
 }
-
-
 
 extension DirectMessagesViewController: UITableViewDataSource {
     
@@ -79,18 +75,13 @@ extension DirectMessagesViewController {
                             }
                             for myMsg in self.myMessages {
                                 for msg in self.messages {
-                                    if msg.message_create.sender_id == myMsg.account.id_str {
+                                    if msg.message_create.sender_id == myMsg.account.id_str && !myMsg.messages.contains(msg) {
                                         myMsg.messages.append(msg)
                                     }
                                 }
                             }
-                            for x in self.myMessages {
-                                print(x.account.name)
-                                for i in x.messages {
-                                    print(i.message_create.message_data)
-                                }
-                            }
                         }, onCompleted: {
+                            self.myMessages = self.myMessages.sorted(by: {$0.messages[0].id > $1.messages[0].id})
                             self.tableView.reloadData()
                         })
                         

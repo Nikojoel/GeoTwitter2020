@@ -15,7 +15,8 @@ class UserMessagesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         // Do any additional setup after loading the view.
     }
     
@@ -43,7 +44,7 @@ extension UserMessagesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
+        cell.textLabel?.text = messages?.messages[indexPath.row].message_create.message_data.text
         return cell
     }
     
