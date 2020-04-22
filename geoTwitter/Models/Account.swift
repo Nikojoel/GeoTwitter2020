@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Account: Decodable {
+struct Account: Decodable{
     let id: Int
     let id_str: String
     let name: String
@@ -19,4 +19,7 @@ struct Account: Decodable {
     let followers_count: Int
     let friends_count: Int
     let profile_image_url_https: String
+    
+    
+
 }

@@ -8,15 +8,27 @@
 
 import Foundation
 
+struct MessageList: Codable {
+    let next_cursor: String?
+    let events: [Event]
+}
+
 struct DirectMessage: Codable {
     let event: Event
 }
 
-struct Event: Codable {
+struct Event: Codable, Hashable {
     let id: String
     let created_timestamp: String
     let type: String
     let message_create: Message
+    
+    static func == (lhs: Event, rhs: Event) -> Bool {
+        return lhs.id == rhs.id
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
 
 struct Message: Codable {
