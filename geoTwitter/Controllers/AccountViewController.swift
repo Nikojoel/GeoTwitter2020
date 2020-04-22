@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import RxSwift
+import CoreData
 
 class AccountViewController: UIViewController {
 
@@ -27,7 +28,12 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        api.myAccount().subscribe(onNext: { [weak self] item in
+        
+        
+    }
+    
+}
+        /*api.myAccount().subscribe(onNext: { [weak self] item in
                 print("next")
             self?.account = item
             var img = item.profile_image_url_https
