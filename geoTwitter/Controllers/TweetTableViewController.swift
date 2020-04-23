@@ -16,6 +16,7 @@ class TweetTableViewController: UITableViewController {
     @IBOutlet weak var logInButton: UIBarButtonItem!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var showMapButton: UIBarButtonItem!
     
     let api = APIFetch()
     let auth = Auth()
@@ -58,6 +59,8 @@ class TweetTableViewController: UITableViewController {
             }).dispose()
             
     }
+    
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let tweetIndex = tableView.indexPathForSelectedRow else { return }
