@@ -34,6 +34,7 @@
 		6A3EC210243C656900D82314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3EC20E243C656900D82314 /* LaunchScreen.storyboard */; };
 		6A3EC21B243C656900D82314 /* geoTwitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EC21A243C656900D82314 /* geoTwitterTests.swift */; };
 		6A3EC226243C656900D82314 /* geoTwitterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EC225243C656900D82314 /* geoTwitterUITests.swift */; };
+		6A481A452456E7370050A58D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A481A472456E7370050A58D /* Localizable.strings */; };
 		6A540F7924509594001D40D6 /* DirectMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A540F7824509594001D40D6 /* DirectMessageTableViewCell.swift */; };
 		6A540F7B2450A84E001D40D6 /* UserMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A540F7A2450A84E001D40D6 /* UserMessagesViewController.swift */; };
 		6A9A97AB2445D2FA00122F12 /* TweetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */; };
@@ -91,6 +92,10 @@
 		6A3EC221243C656900D82314 /* geoTwitterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = geoTwitterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A3EC225243C656900D82314 /* geoTwitterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = geoTwitterUITests.swift; sourceTree = "<group>"; };
 		6A3EC227243C656900D82314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A481A412456E6290050A58D /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6A481A422456E62A0050A58D /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Main.strings; sourceTree = "<group>"; };
+		6A481A462456E7370050A58D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6A481A482456E7430050A58D /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6A540F7824509594001D40D6 /* DirectMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessageTableViewCell.swift; sourceTree = "<group>"; };
 		6A540F7A2450A84E001D40D6 /* UserMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessagesViewController.swift; sourceTree = "<group>"; };
 		6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetInfo.swift; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 		6A3EC1F4243C656700D82314 = {
 			isa = PBXGroup;
 			children = (
+				6A481A472456E7370050A58D /* Localizable.strings */,
 				3E840B86245171CC00BBBC30 /* Keys.swift */,
 				6A3EC1FF243C656700D82314 /* geoTwitter */,
 				6A3EC219243C656900D82314 /* geoTwitterTests */,
@@ -338,6 +344,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fi,
 			);
 			mainGroup = 6A3EC1F4243C656700D82314;
 			productRefGroup = 6A3EC1FE243C656700D82314 /* Products */;
@@ -357,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A2D8D07244EDC4C00270DD6 /* Main.storyboard in Resources */,
+				6A481A452456E7370050A58D /* Localizable.strings in Resources */,
 				6A3EC210243C656900D82314 /* LaunchScreen.storyboard in Resources */,
 				6A3EC20D243C656900D82314 /* Assets.xcassets in Resources */,
 			);
@@ -489,6 +497,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6A3EC207243C656700D82314 /* Base */,
+				6A481A422456E62A0050A58D /* fi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -497,8 +506,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				6A3EC20F243C656900D82314 /* Base */,
+				6A481A412456E6290050A58D /* fi */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6A481A472456E7370050A58D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A481A462456E7370050A58D /* en */,
+				6A481A482456E7430050A58D /* fi */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -508,6 +527,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -568,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
