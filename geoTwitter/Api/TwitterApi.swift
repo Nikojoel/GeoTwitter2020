@@ -54,4 +54,10 @@ class TwitterApi {
     func showUser(id: String) -> Observable<Account> {
         return networkService.requestGET(url: baseURL + EndPoint.showUser.rawValue + "?id=\(id)")
     }
+    
+    func postDirectMessage(id: String, message: String) {
+        let data = "{\"event\": {\"type\": \"message_create\", \"message_create\": {\"target\": {\"recipient_id\": \"\(id)\"}, \"message_data\": {\"text\": \"\(message)\"}}}}"
+        let header = ["Content-Type":"application/json"]
+        networkService.requestPOST(url: baseURL + EndPoint.newMessage.rawValue, body: data, headers: header)
+    }
 }
