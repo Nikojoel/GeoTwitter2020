@@ -55,12 +55,15 @@ class NetworkService {
     }
     
     
-    func requestPOST(url: String, body: String, headers: [String:String] = [:] ) {
+    func requestPOST(url: String, body: String, parameters: [String:String] = [:], headers: [String:String] = [:] ) {
+        print(body)
         let data = body.data(using: .ascii)
+        print(data)
         self.oauth?.client.post(url, parameters: [:], headers: headers, body: data) { result in
-            print(result)
+            print("sending")
             switch result {
-            case .success:
+            case .success(let success):
+                print(success.response)
                 print("new message sent")
             case .failure(let error):
                 print("error in message sending: ", error)

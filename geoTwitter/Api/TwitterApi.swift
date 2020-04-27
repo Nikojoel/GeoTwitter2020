@@ -8,6 +8,7 @@ import RxSwift
  - listDirectMessages: return a list of direct messages
  - showDirectMessage: shows a message based of id
  - showUser: show a user by id
+ - postDirectMessage: send a new private message
  */
 class TwitterApi {
     private let networkService = NetworkService()
@@ -54,10 +55,19 @@ class TwitterApi {
     func showUser(id: String) -> Observable<Account> {
         return networkService.requestGET(url: baseURL + EndPoint.showUser.rawValue + "?id=\(id)")
     }
-    
+    /**
+     Send a direct message to a user
+     - Parameters:
+        - id: String of receiver is
+        - message: Message string
+     */
     func postDirectMessage(id: String, message: String) {
         let data = "{\"event\": {\"type\": \"message_create\", \"message_create\": {\"target\": {\"recipient_id\": \"\(id)\"}, \"message_data\": {\"text\": \"\(message)\"}}}}"
         let header = ["Content-Type":"application/json"]
         networkService.requestPOST(url: baseURL + EndPoint.newMessage.rawValue, body: data, headers: header)
+    }
+    
+    func postTweet(message: String) {
+        networkService.requestPOST(url: baseURL + EndPoint.newTweet.rawValue, body: "{\"status\":\"\(message)\"}", parameters: ["status":message])
     }
 }
