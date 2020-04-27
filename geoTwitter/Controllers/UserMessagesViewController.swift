@@ -22,11 +22,8 @@ class UserMessagesViewController: UIViewController {
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         // Do any additional setup after loading the view.
     }
-    
-    
    
     @IBAction func sendMsg(_ sender: UIButton) {
-        
         if let id = messages?.account.id_str {
             if (inputField.text != "") {
                 api.postDirectMessage(id: id, message: inputField.text ?? "")
