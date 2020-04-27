@@ -18,7 +18,7 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var screenName: UILabel!
     @IBOutlet weak var followersCount: UILabel!
     @IBOutlet weak var friendsCount: UILabel!
-    @IBOutlet weak var location: UILabel!
+    //@IBOutlet weak var location: UILabel!
     @IBOutlet weak var desc: UILabel!
     
     
@@ -29,7 +29,7 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+       
     }
     
 }
@@ -42,10 +42,10 @@ class AccountViewController: UIViewController {
             img.insert(contentsOf: ".jpg", at: img.endIndex)
             self?.profileImage.kf.setImage(with: URL(string: img))
             self?.fullName.text = item.name
-            self?.screenName.text = item.screen_name
+            self?.screenName.text = "@" + item.screen_name
             self?.followersCount.text = "\(item.followers_count)"
             self?.friendsCount.text = "\(item.friends_count)"
-            self?.location.text = item.profile_location
+           // self?.location.text = item.profile_location
             self?.desc.text = item.description
             }).disposed(by: disposeBag)
         // Do any additional setup after loading the view.
