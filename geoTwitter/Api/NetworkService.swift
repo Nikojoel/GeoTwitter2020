@@ -55,19 +55,19 @@ class NetworkService {
     }
     
     
-    func requestPOST<T: Decodable>(url: String, parameters: [String:Any] = [:], headers: [String:String] = [:] ) -> Observable<T> {
-        return Observable.create { observer -> Disposable in
-            self.oauth?.client.request(url, method: .POST, parameters: parameters, headers: headers) { result in
-                // MARK: TODO
-            }
-            
-            return Disposables.create {
-                print("disposable created")
+    func requestPOST(url: String, body: String, headers: [String:String] = [:] ) {
+        let data = body.data(using: .ascii)
+        self.oauth?.client.post(url, parameters: [:], headers: headers, body: data) { result in
+            print(result)
+            switch result {
+            case .success:
+                print("new message sent")
+            case .failure(let error):
+                print("error in message sending: ", error)
             }
         }
-        
-        
     }
-    
-    
 }
+
+
+

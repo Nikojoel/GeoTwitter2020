@@ -11,7 +11,10 @@ import UIKit
 class UserMessagesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var inputField: UITextField!
     var messages: MyMessages?
+    let api = TwitterApi()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +23,15 @@ class UserMessagesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func inputText(_ sender: UITextField) {
-    }
-    @IBAction func sendMessage(_ sender: Any) {
+    
+   
+    @IBAction func sendMsg(_ sender: UIButton) {
+        
+        if let id = messages?.account.id_str {
+            if (inputField.text != "") {
+                api.postDirectMessage(id: id, message: inputField.text ?? "")
+            }
+        }
     }
     
     /*
