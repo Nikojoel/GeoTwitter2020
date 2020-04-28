@@ -34,19 +34,29 @@ class MapViewController: UIViewController {
     
     func searchForTweets(_ keyWord: String) {
         var temp = [Tweet]()
+        var tweetData = [[Tweet]]()
+        
         twitterApi.searchTweet(keyWord).subscribe(onNext: { item in
-            for tweet in item.tweet {
-                if tweet.user.location != "" {
-                    temp.append(tweet)
-                    print("\(tweet.user.location)")
+            let nextResults = item.metaData.next_results ?? ""
+            tweetData.append(item.tweet)
+
+            self.twitterApi.searchNextTweet(nextResults).subscribe(onNext: {nextItem in
+                tweetData.append(nextItem.tweet)
+                for tweetArray in tweetData     {
+                    for tweet in tweetArray {
+                        if tweet.user.location != "" {
+                            temp.append(tweet)
+                        }
+                    }
                 }
-            }
-            self.locations = temp
+                print(nextItem.metaData.next_results ?? "")
+                self.locations = temp
+            }).disposed(by: self.disposeBag)
         }).disposed(by: disposeBag)
     }
     
     func reverseGeoCode(_ tweet: Tweet) {
-        api.useReverseGeoCode(tweet.user.location).subscribe(onNext: {item in
+    api.useReverseGeoCode(tweet.user.location).subscribe(onNext: {item in
             // Insert more data to the annotation
             let annotation = MKPointAnnotation()
             if item.results.count != 0 {
@@ -73,4 +83,3 @@ extension MapViewController: UISearchBarDelegate {
            self.searchBar.endEditing(true)
        }
    }
-
