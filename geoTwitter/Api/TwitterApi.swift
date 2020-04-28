@@ -76,6 +76,7 @@ class TwitterApi {
     }
     
     func postTweet(message: String) {
-        networkService.requestPOST(url: baseURL + EndPoint.newTweet.rawValue, body: "{\"status\":\"\(message)\"}", parameters: ["status":message])
+        let encoded = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        networkService.requestPOST(url: baseURL + EndPoint.newTweet.rawValue + "?status=\(encoded ?? "")", body: "")
     }
 }
