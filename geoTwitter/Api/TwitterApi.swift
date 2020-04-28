@@ -28,6 +28,14 @@ class TwitterApi {
         return networkService.requestGET(url: url)
     }
     /**
+    Creates an api standard api query for next tweet results
+     - Returns: an Observable typed TweetQuery
+     */
+    func searchNextTweet(_ query: String) -> Observable<TweetQuery> {
+        let url = EndPoint.url.rawValue + EndPoint.query.rawValue + query
+        return networkService.requestGET(url: url)
+    }
+    /**
     Fetches current acoounts info form twitter
      - Returns: Observable typed Account
      */
@@ -68,6 +76,7 @@ class TwitterApi {
     }
     
     func postTweet(message: String) {
-        networkService.requestPOST(url: baseURL + EndPoint.newTweet.rawValue, body: "{\"status\":\"\(message)\"}", parameters: ["status":message])
+        let encoded = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        networkService.requestPOST(url: baseURL + EndPoint.newTweet.rawValue + "?status=\(encoded ?? "")", body: "")
     }
 }
