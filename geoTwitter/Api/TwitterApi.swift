@@ -28,6 +28,14 @@ class TwitterApi {
         return networkService.requestGET(url: url)
     }
     /**
+    Creates an api standard api query for next tweet results
+     - Returns: an Observable typed TweetQuery
+     */
+    func searchNextTweet(_ query: String) -> Observable<TweetQuery> {
+        let url = EndPoint.url.rawValue + EndPoint.query.rawValue + query
+        return networkService.requestGET(url: url)
+    }
+    /**
     Fetches current acoounts info form twitter
      - Returns: Observable typed Account
      */
