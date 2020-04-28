@@ -9,7 +9,10 @@
 import Foundation
 import OAuthSwift
 import RxSwift
-
+/**
+Class for network operations with no authentication
+- apiFetchGET:  http request to fetch from the api
+*/
 
 class NetworkServiceNoAuth {
     

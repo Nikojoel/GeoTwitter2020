@@ -8,8 +8,12 @@
 
 import Foundation
 import RxSwift
-
+/**
+Class for reverse geocode api
+- useReverseGeoCode: encodes url and returns observable type of TweetLocation
+*/
 class ReverseGeoApi {
+    
     private let networkService = NetworkServiceNoAuth()
     
     func useReverseGeoCode(_ cityName: String) -> Observable<TweetLocation> {
