@@ -75,7 +75,7 @@ extension DirectMessagesViewController {
                             }
                             for myMsg in self.myMessages {
                                 for msg in self.messages {
-                                    if msg.message_create.sender_id == myMsg.account.id_str && !myMsg.messages.contains(msg) {
+                                    if msg.message_create.sender_id == myMsg.account.id_str &&  !myMsg.messages.contains(msg) {
                                         myMsg.messages.append(msg)
                                     }
                                 }

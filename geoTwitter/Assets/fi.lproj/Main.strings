@@ -1,0 +1,87 @@
+
+/* Class = "UILabel"; text = "DESCRIPTION"; ObjectID = "03K-0U-OXi"; */
+"03K-0U-OXi.text" = "KUVAUS";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "06e-Ia-puF"; */
+"06e-Ia-puF.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3ES-qK-7il"; */
+"3ES-qK-7il.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "45M-Zo-ATg"; */
+"45M-Zo-ATg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4a2-o8-rnY"; */
+"4a2-o8-rnY.text" = "Label";
+
+/* Class = "UISearchBar"; placeholder = "Search for hashtags"; ObjectID = "6Od-fO-fAh"; */
+"6Od-fO-fAh.placeholder" = "Etsi hashtageja";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7yO-JP-83p"; */
+"7yO-JP-83p.text" = "Label";
+
+/* Class = "UILabel"; text = "FRIENDS"; ObjectID = "9vB-fV-pLs"; */
+"9vB-fV-pLs.text" = "Kaverit";
+
+/* Class = "UIBarButtonItem"; title = "Show Map"; ObjectID = "AVw-r0-Iu3"; */
+"AVw-r0-Iu3.title" = "Näytä kartta";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "F0I-9X-kMa"; */
+"F0I-9X-kMa.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "Fka-un-y2S"; */
+"Fka-un-y2S.title" = "Koti";
+
+/* Class = "UILabel"; text = "SCREEN NAME"; ObjectID = "Ifa-u8-mSx"; */
+"Ifa-u8-mSx.text" = "screen nimi";
+
+/* Class = "UILabel"; text = "NAME"; ObjectID = "Kmy-4K-89k"; */
+"Kmy-4K-89k.text" = "NIMI";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LZr-Z5-rjm"; */
+"LZr-Z5-rjm.text" = "Label";
+
+/* Class = "UILabel"; text = "Favorites:"; ObjectID = "Uml-4d-gOV"; */
+"Uml-4d-gOV.text" = "Suosikit:";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "VYA-iJ-lYk"; */
+"VYA-iJ-lYk.text" = "Otsikko";
+
+/* Class = "UILabel"; text = "Friends:"; ObjectID = "Zno-5g-guK"; */
+"Zno-5g-guK.text" = "Kaverit:";
+
+/* Class = "UILabel"; text = "Retweets:"; ObjectID = "ZxK-a8-yev"; */
+"ZxK-a8-yev.text" = "Retweetit:";
+
+/* Class = "UILabel"; text = "Followers"; ObjectID = "b8b-lF-q3q"; */
+"b8b-lF-q3q.text" = "Seuraajat";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cei-yw-ge2"; */
+"cei-yw-ge2.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Log In"; ObjectID = "gZw-kB-lrS"; */
+"gZw-kB-lrS.title" = "Kirjaudu sisään";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kFR-MM-Zli"; */
+"kFR-MM-Zli.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "lF1-eT-8dS"; */
+"lF1-eT-8dS.title" = "Profiili";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ndu-mS-xqo"; */
+"ndu-mS-xqo.text" = "Label";
+
+/* Class = "UILabel"; text = "Followers:"; ObjectID = "sMv-g2-Btm"; */
+"sMv-g2-Btm.text" = "Seuraajat:";
+
+/* Class = "UITabBarItem"; title = "Messages"; ObjectID = "v4Y-j4-pMF"; */
+"v4Y-j4-pMF.title" = "Viestit";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "v9c-ZL-197"; */
+"v9c-ZL-197.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "wq0-SA-BzI"; */
+"wq0-SA-BzI.title" = "Etsi";
+
+/* Class = "UILabel"; text = "LOCATION"; ObjectID = "y8n-BR-7Ix"; */
+"y8n-BR-7Ix.text" = "SIJAINTI";

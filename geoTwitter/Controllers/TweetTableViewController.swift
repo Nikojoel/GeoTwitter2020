@@ -93,7 +93,7 @@ class TweetTableViewController: UITableViewController {
            cell.profileImage.kf.setImage(with: URL(string: img))
         }
         
-        cell.userName.text = tweet.user.screen_name
+        cell.userName.text = tweet.user.name
         cell.tweetText.text = tweet.text
         return cell
     }
