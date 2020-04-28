@@ -41,7 +41,7 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     
     func setUpInputField(){
         inputText.delegate = self
-        inputText.layer.borderColor = UIColor.lightGray.cgColor
+        inputText.layer.borderColor = UIColor.systemTeal.cgColor
         inputText.layer.borderWidth = 1
         setPlaceholder()
     }

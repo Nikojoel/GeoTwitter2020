@@ -661,24 +661,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skt-tp-OuZ">
-                                <rect key="frame" x="67" y="147" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skt-tp-OuZ">
+                                <rect key="frame" x="67" y="355" width="240" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="qbP-24-G2O"/>
+                                    <constraint firstAttribute="width" constant="240" id="szq-Zv-BUb"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="twitter"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtL-ai-94r">
-                                <rect key="frame" x="169" y="336" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Send"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtL-ai-94r">
+                                <rect key="frame" x="157" y="543" width="62" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Tweet it!">
+                                    <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="sendTweet:" destination="YJ0-sc-VOr" eventType="touchUpInside" id="XKE-7Q-C7Q"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post new tweet!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLe-gs-gEV">
+                                <rect key="frame" x="102" y="282" width="171" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterlogo" translatesAutoresizingMaskIntoConstraints="NO" id="xzt-gZ-fTk">
+                                <rect key="frame" x="67" y="146" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="3BN-rK-peg"/>
+                                    <constraint firstAttribute="width" constant="240" id="Ztj-hy-FC5"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xzt-gZ-fTk" firstAttribute="top" secondItem="O76-Vv-lQy" secondAttribute="top" constant="102" id="DtB-k1-ZGK"/>
+                            <constraint firstItem="wtL-ai-94r" firstAttribute="leading" secondItem="O76-Vv-lQy" secondAttribute="leading" constant="157" id="LWo-G8-ogu"/>
+                            <constraint firstItem="xzt-gZ-fTk" firstAttribute="leading" secondItem="O76-Vv-lQy" secondAttribute="leading" constant="67" id="Lcq-pW-1aV"/>
+                            <constraint firstItem="O76-Vv-lQy" firstAttribute="trailing" secondItem="xzt-gZ-fTk" secondAttribute="trailing" constant="68" id="Vjs-od-FTR"/>
+                            <constraint firstItem="FLe-gs-gEV" firstAttribute="top" secondItem="xzt-gZ-fTk" secondAttribute="bottom" constant="8" id="XTR-ag-e92"/>
+                            <constraint firstItem="skt-tp-OuZ" firstAttribute="top" secondItem="FLe-gs-gEV" secondAttribute="bottom" constant="43" id="XVD-mY-Wi2"/>
+                            <constraint firstItem="O76-Vv-lQy" firstAttribute="trailing" secondItem="wtL-ai-94r" secondAttribute="trailing" constant="156" id="eJQ-jO-x1J"/>
+                            <constraint firstItem="O76-Vv-lQy" firstAttribute="trailing" secondItem="FLe-gs-gEV" secondAttribute="trailing" constant="102" id="oNM-Lp-P0I"/>
+                            <constraint firstItem="FLe-gs-gEV" firstAttribute="leading" secondItem="O76-Vv-lQy" secondAttribute="leading" constant="102" id="obG-D1-0CL"/>
+                            <constraint firstItem="wtL-ai-94r" firstAttribute="top" secondItem="skt-tp-OuZ" secondAttribute="bottom" constant="60" id="phj-La-uvu"/>
+                            <constraint firstItem="skt-tp-OuZ" firstAttribute="leading" secondItem="O76-Vv-lQy" secondAttribute="leading" constant="67" id="qbM-1a-9Rc"/>
+                            <constraint firstItem="O76-Vv-lQy" firstAttribute="bottom" secondItem="wtL-ai-94r" secondAttribute="bottom" constant="154" id="w7C-zT-FiT"/>
+                            <constraint firstItem="O76-Vv-lQy" firstAttribute="trailing" secondItem="skt-tp-OuZ" secondAttribute="trailing" constant="68" id="z2C-Lp-Lzt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O76-Vv-lQy"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tweet" image="plus" catalog="system" selectedImage="plus" springLoaded="YES" id="xQZ-Q8-xTy"/>
@@ -727,5 +760,6 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="profPic1" width="360" height="231.5"/>
+        <image name="twitterlogo" width="800" height="800"/>
     </resources>
 </document>
