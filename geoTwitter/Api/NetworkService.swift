@@ -49,7 +49,7 @@ class NetworkService {
                 }
             }
             return Disposables.create {
-                print("disposed")
+               
             }
         }
     }
