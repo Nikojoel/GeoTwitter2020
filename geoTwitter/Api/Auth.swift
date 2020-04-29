@@ -15,7 +15,7 @@ class Auth {
     
     func authUserToken() -> Observable<Bool> {
         // Create an instance and retain it
-        return Observable.deferred {
+        return Observable.create { observer -> Disposable in
             
             self.oAuth = OAuth1Swift(
                 consumerKey:    Keys.consumerKey.rawValue,
@@ -34,14 +34,16 @@ class Auth {
                     let userData = UserDefaults.standard
                     userData.setValue(credential.oauthToken, forKey: "userToken")
                     userData.setValue(credential.oauthTokenSecret, forKey: "userSecret")
-                    
+                    observer.onCompleted()
                 case .failure(let error):
-                    
+                    observer.onError(error)
                     print(error.localizedDescription)
                     
                 }
             }
-            return .just(true)
+            return Disposables.create {
+                
+            }
             
         }
         

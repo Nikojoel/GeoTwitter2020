@@ -26,6 +26,7 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         api.myAccount().subscribe(onNext: { [weak self] item in
              print("next")
          self?.account = item
@@ -45,7 +46,7 @@ class AccountViewController: UIViewController {
         let userData = UserDefaults.standard
         userData.removeObject(forKey: "userToken")
         userData.removeObject(forKey: "userSecret")
-        print("logged out")
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
     
