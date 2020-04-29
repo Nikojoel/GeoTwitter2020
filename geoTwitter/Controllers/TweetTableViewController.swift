@@ -13,6 +13,7 @@ import Kingfisher
 class TweetTableViewController: UITableViewController {
     
     
+    @IBOutlet var tweetTableView: UITableView!
     @IBOutlet weak var logInButton: UIBarButtonItem!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -34,6 +35,7 @@ class TweetTableViewController: UITableViewController {
         loadingIndicator.isHidden = true
         searchBar.delegate = self
         searchBar.isHidden = true
+        tweetTableView.rowHeight = 95
         self.tableView.keyboardDismissMode = .onDrag
         if (userDefaults.string(forKey: "userToken") != nil && userDefaults.string(forKey: "userSecret") != nil) {
             logInButton.isEnabled = false
