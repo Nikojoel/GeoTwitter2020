@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4TR-l6-oBf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4TR-l6-oBf">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,51 +70,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="QYX-xv-mpk">
-                                            <rect key="frame" x="16" y="11" width="343" height="73"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-84-V0a">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="73"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="53" image="profPic1" translatesAutoresizingMaskIntoConstraints="NO" id="Fh6-mj-8MT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="73"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="4Fn-tl-J8v"/>
-                                                        <constraint firstAttribute="height" constant="50" id="bo7-KQ-j8D"/>
-                                                    </constraints>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="BbU-7b-ncN">
-                                                    <rect key="frame" x="76" y="0.0" width="267" height="73"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cei-yw-ge2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="267" height="37.333333333333336"/>
-                                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                                            <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ES-qK-7il">
-                                                            <rect key="frame" x="0.0" y="51.333333333333336" width="267" height="21.666666666666664"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="21.666666666666664" id="nkL-NY-v2z"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ES-qK-7il">
+                                            <rect key="frame" x="74" y="51" width="285" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="53" image="profPic1" translatesAutoresizingMaskIntoConstraints="NO" id="Fh6-mj-8MT">
+                                            <rect key="frame" x="16" y="22" width="50" height="50"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cei-yw-ge2">
+                                            <rect key="frame" x="74" y="22" width="285" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="QYX-xv-mpk" firstAttribute="top" secondItem="IXw-qP-RUC" secondAttribute="topMargin" id="6tB-K1-E4U"/>
-                                        <constraint firstItem="QYX-xv-mpk" firstAttribute="leading" secondItem="IXw-qP-RUC" secondAttribute="leadingMargin" id="LS1-ZB-srv"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="QYX-xv-mpk" secondAttribute="bottom" id="Mf1-qF-zUJ"/>
-                                        <constraint firstItem="QYX-xv-mpk" firstAttribute="centerY" secondItem="IXw-qP-RUC" secondAttribute="centerY" id="kI8-ax-CPE"/>
-                                        <constraint firstItem="QYX-xv-mpk" firstAttribute="centerX" secondItem="IXw-qP-RUC" secondAttribute="centerX" id="toU-X8-y2y"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="QYX-xv-mpk" secondAttribute="trailing" id="vLe-mS-XQV"/>
+                                        <constraint firstAttribute="bottom" secondItem="Fh6-mj-8MT" secondAttribute="bottom" constant="23" id="B0R-qY-Kbs"/>
+                                        <constraint firstItem="Fh6-mj-8MT" firstAttribute="top" secondItem="IXw-qP-RUC" secondAttribute="top" constant="22" id="ggj-2R-JWW"/>
+                                        <constraint firstItem="Fh6-mj-8MT" firstAttribute="leading" secondItem="IXw-qP-RUC" secondAttribute="leading" constant="16" id="kVg-yH-gJM"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -147,6 +124,7 @@
                         <outlet property="logInButton" destination="gZw-kB-lrS" id="dox-CM-abM"/>
                         <outlet property="searchBar" destination="bs1-CS-37D" id="mjh-ir-3eS"/>
                         <outlet property="showMapButton" destination="AVw-r0-Iu3" id="nOv-5M-76R"/>
+                        <outlet property="tweetTableView" destination="qdF-td-ehp" id="Lhy-n6-GUq"/>
                         <segue destination="N0I-up-bep" kind="show" id="4wF-KD-Or2"/>
                     </connections>
                 </tableViewController>
@@ -751,19 +729,22 @@
             <point key="canvasLocation" x="4919" y="-613"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4wF-KD-Or2"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="arrow.up.arrow.down" catalog="system" width="64" height="48"/>
-        <image name="arrowshape.turn.up.right" catalog="system" width="64" height="52"/>
-        <image name="envelope" catalog="system" width="64" height="46"/>
-        <image name="envelope.fill" catalog="system" width="64" height="46"/>
-        <image name="heart.fill" catalog="system" width="64" height="54"/>
-        <image name="house" catalog="system" width="64" height="54"/>
-        <image name="house.fill" catalog="system" width="64" height="52"/>
-        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
-        <image name="person" catalog="system" width="64" height="58"/>
-        <image name="person.2.fill" catalog="system" width="64" height="40"/>
-        <image name="person.fill" catalog="system" width="64" height="60"/>
-        <image name="plus" catalog="system" width="64" height="56"/>
+        <image name="arrow.up.arrow.down" catalog="system" width="128" height="96"/>
+        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
+        <image name="envelope" catalog="system" width="128" height="93"/>
+        <image name="envelope.fill" catalog="system" width="128" height="93"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.2.fill" catalog="system" width="128" height="80"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="profPic1" width="360" height="231.5"/>
         <image name="twitterlogo" width="800" height="800"/>
     </resources>
