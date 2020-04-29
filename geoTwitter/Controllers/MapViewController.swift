@@ -29,6 +29,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.showsScale = true
+        mapView.showsUserLocation = true
         searchBar.delegate = self
     }
     
@@ -64,7 +65,11 @@ class MapViewController: UIViewController {
                 annotation.subtitle = tweet.user.description
                 annotation.coordinate = CLLocationCoordinate2D(latitude: item.results[0].geometry["lat"] ?? 0, longitude:
                     item.results[0].geometry["lng"] ?? 0)
-                self.mapView.addAnnotation(annotation)
+                let main = DispatchQueue.main
+                main.async {
+                    self.mapView.addAnnotation(annotation)
+                    self.mapView.deselectAnnotation(annotation, animated: false)
+               }
             }
         }).disposed(by: disposeBag)
     }
