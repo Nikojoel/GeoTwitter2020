@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4TR-l6-oBf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4TR-l6-oBf">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -113,15 +113,9 @@
                                 <segue destination="7Bx-MG-vy7" kind="show" id="eMc-uQ-eqG"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Log In" id="gZw-kB-lrS">
-                            <connections>
-                                <action selector="tapLogInButton:" destination="zSn-bd-OrK" id="uoC-aS-Yt3"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="loadingIndicator" destination="fSq-Xs-6pJ" id="GzO-wo-LBL"/>
-                        <outlet property="logInButton" destination="gZw-kB-lrS" id="dox-CM-abM"/>
                         <outlet property="searchBar" destination="bs1-CS-37D" id="mjh-ir-3eS"/>
                         <outlet property="showMapButton" destination="AVw-r0-Iu3" id="nOv-5M-76R"/>
                         <outlet property="tweetTableView" destination="qdF-td-ehp" id="Lhy-n6-GUq"/>
@@ -729,24 +723,24 @@
             <point key="canvasLocation" x="4919" y="-613"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="4wF-KD-Or2"/>
-    </inferredMetricsTieBreakers>
     <resources>
-        <image name="arrow.up.arrow.down" catalog="system" width="128" height="96"/>
-        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
-        <image name="envelope" catalog="system" width="128" height="93"/>
-        <image name="envelope.fill" catalog="system" width="128" height="93"/>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <image name="house" catalog="system" width="128" height="110"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="arrow.up.arrow.down" catalog="system" width="64" height="48"/>
+        <image name="arrowshape.turn.up.right" catalog="system" width="64" height="52"/>
+        <image name="envelope" catalog="system" width="64" height="46"/>
+        <image name="envelope.fill" catalog="system" width="64" height="46"/>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="logOut" width="570" height="201.5"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.2.fill" catalog="system" width="128" height="80"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="person" catalog="system" width="64" height="58"/>
+        <image name="person.2.fill" catalog="system" width="64" height="40"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
         <image name="profPic1" width="360" height="231.5"/>
         <image name="twitterlogo" width="800" height="800"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4wF-KD-Or2"/>
+    </inferredMetricsTieBreakers>
 </document>

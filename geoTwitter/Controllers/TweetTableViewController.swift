@@ -1,28 +1,21 @@
-//
-//  tabTableViewController.swift
-//  geoTwitter
-//
-//  Created by iosdev on 15.4.2020.
-//  Copyright © 2020 enarm. All rights reserved.
-//
-
+/**
+ Tableview controller for displaying list of tweets with user inputed search string
+ */
 import UIKit
 import RxSwift
 import Kingfisher
 
 class TweetTableViewController: UITableViewController {
     
-    
     @IBOutlet var tweetTableView: UITableView!
-    @IBOutlet weak var logInButton: UIBarButtonItem!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var showMapButton: UIBarButtonItem!
     
-    let api = APIFetch()
-    let auth = Auth()
-    private let userDefaults = UserDefaults.standard
-    var tweets: [TweetQuery] = [] {
+    private let twitterApi = TwitterApi()
+    private let disposeBag = DisposeBag()
+    private var disposable: Disposable?
+    private var tweets: [TweetQuery] = [] {
         didSet {
             tableView.reloadData()
             loadingIndicator.isHidden = true
@@ -31,45 +24,18 @@ class TweetTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
-        loadingIndicator.isHidden = true
-        searchBar.delegate = self
-        searchBar.isHidden = true
-        tweetTableView.rowHeight = 95
-        self.tableView.keyboardDismissMode = .onDrag
-        if (userDefaults.string(forKey: "userToken") != nil && userDefaults.string(forKey: "userSecret") != nil) {
-            logInButton.isEnabled = false
-            searchBar.isHidden = false
-            
-            subsrcibeAndFetch()
-        }
-        
-    }
-    // MARK: - Actions
-    @IBAction func tapLogInButton(_ sender: UIBarButtonItem) {
-       
-        auth.authUserToken()
-            .subscribe(
-                onNext: { element in
-                print("next")
-                if element {
-                    self.logInButton.isEnabled = false
-                    self.tableView.isHidden = false
-                    self.searchBar.isHidden = false
-                    self.subsrcibeAndFetch()
-                }
-            }).dispose()
-            
+        initialSetup()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        disposable?.disposed(by: disposeBag)
+    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let tweetIndex = tableView.indexPathForSelectedRow else { return }
         if let destination = segue.destination as? SingleTweetController {
-            
             destination.tweet = tweets[tweetIndex.section].tweet[tweetIndex.row]
-            
         }
     }
     
@@ -101,25 +67,18 @@ class TweetTableViewController: UITableViewController {
     }
 }
 
-    //MARK: - custom functions
-extension TweetTableViewController {
-    
-    func subsrcibeAndFetch() {
-        _ = self.api.subject
-            .subscribe { [weak self] in
-                if let element = $0.element {
-                    self?.tweets = [element]
-                }
-        }
-        //self.api.fetchAPI(query: "#helsinki")
-    }
-}
-
     //MARK: - Searchbar delegate
 extension TweetTableViewController: UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         loadingIndicator.isHidden = false
-        self.api.fetchAPI(query: searchBar.text)
+        if let text = searchBar.text {
+            disposable = twitterApi.searchTweet(text)
+                .subscribe({ [weak self] in
+                    if let result = $0.element {
+                        self?.tweets.insert(result, at: 0)
+                    }
+            })
+        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -129,8 +88,17 @@ extension TweetTableViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.endEditing(true)
     }
-    
+}
 
+    //MARK: - initial setup of view
+extension TweetTableViewController {
+    func initialSetup() {
+       self.view.backgroundColor = .white
+        loadingIndicator.isHidden = true
+        searchBar.delegate = self
+        tweetTableView.rowHeight = 95
+        self.tableView.keyboardDismissMode = .onDrag
+    }
 }
 
 
