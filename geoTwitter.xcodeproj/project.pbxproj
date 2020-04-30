@@ -155,6 +155,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6A23ADCF245AB2E70040B251 /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				6A00BAB72448606800C633B0 /* APIfetch.swift */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
 		6A31571C2448252D00DD4E75 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +203,7 @@
 		6A3EC1FF243C656700D82314 /* geoTwitter */ = {
 			isa = PBXGroup;
 			children = (
+				6A23ADCF245AB2E70040B251 /* Archive */,
 				6A31571C2448252D00DD4E75 /* Assets */,
 				6A3EC235243C6D5D00D82314 /* Api */,
 				6A3EC234243C6D5100D82314 /* Controllers */,
@@ -261,7 +270,6 @@
 				6A2D8D03244EDC3300270DD6 /* NetworkServiceNoAuth.swift */,
 				6A2D8D04244EDC3300270DD6 /* ReverseGeoApi.swift */,
 				6A00BAB52448604900C633B0 /* Auth.swift */,
-				6A00BAB72448606800C633B0 /* APIfetch.swift */,
 				6A2D8CE9244CD0A300270DD6 /* EndPoint.swift */,
 				6A2D8CEB244D5D3300270DD6 /* NetworkService.swift */,
 				6A2D8CED244D657D00270DD6 /* TwitterApi.swift */,
