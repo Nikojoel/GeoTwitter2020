@@ -1,25 +1,16 @@
-//
-//  DirectMessagesViewController.swift
-//  geoTwitter
-//
-//  Created by iosdev on 22.4.2020.
-//  Copyright © 2020 enarm. All rights reserved.
-//
-
 import UIKit
 import RxSwift
 import Kingfisher
-
+/// displays users direct messages grouped by sender
 class DirectMessagesViewController: UIViewController {
-    
     
     private let api = TwitterApi()
     private let disposeBag = DisposeBag()
     private var messages:[Event] = []
     private var users:[Account] = []
     private var myMessages: [MyMessages] = []
-    @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +23,7 @@ class DirectMessagesViewController: UIViewController {
     
     
     // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // opens new scene with all messages from single user
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let index = tableView.indexPathForSelectedRow else {return}
         if let destination = segue.destination as? UserMessagesViewController {
@@ -42,10 +32,10 @@ class DirectMessagesViewController: UIViewController {
     }
 }
 
+    // MARK: - Tableview extension
 extension DirectMessagesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return myMessages.count
     }
     
@@ -58,8 +48,10 @@ extension DirectMessagesViewController: UITableViewDataSource {
         return cell
     }
 }
-
+    //MARK: - custom functions extension
 extension DirectMessagesViewController {
+    
+    // lists all messages for users grouped by sender.
     func listMessages() {
         api.listDirectMessages()
             .subscribe(onNext: {item in

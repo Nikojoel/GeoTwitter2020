@@ -158,6 +158,7 @@
 		6A23ADCF245AB2E70040B251 /* Archive */ = {
 			isa = PBXGroup;
 			children = (
+				6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */,
 				6A00BAB72448606800C633B0 /* APIfetch.swift */,
 			);
 			path = Archive;
@@ -238,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				6A2D8D08244EDF1600270DD6 /* TweetLocation.swift */,
-				6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */,
 				6A3157042446F89C00DD4E75 /* TweetQuery.swift */,
 				6A2D8CF5244D74CE00270DD6 /* Account.swift */,
 				6A2D8CF7244D7B8700270DD6 /* MyMessages.swift */,

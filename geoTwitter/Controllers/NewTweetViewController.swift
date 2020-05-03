@@ -1,13 +1,5 @@
-//
-//  NewTweetViewController.swift
-//  geoTwitter
-//
-//  Created by iosdev on 27.4.2020.
-//  Copyright © 2020 enarm. All rights reserved.
-//
-
 import UIKit
-
+/// Post a new tweet from logged in account
 class NewTweetViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var inputText: UITextView!
@@ -16,9 +8,7 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpInputField()
-        // Do any additional setup after loading the view.
     }
-    
 
     @IBAction func sendTweet(_ sender: UIButton) {
         api.postTweet(message: inputText.text)

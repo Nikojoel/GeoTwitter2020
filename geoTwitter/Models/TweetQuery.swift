@@ -1,11 +1,4 @@
-//
-//  Tweet.swift
-//  geoTwitter
-//
-//  Created by iosdev on 15.4.2020.
-//  Copyright © 2020 enarm. All rights reserved.
-//
-
+// Stuct for twitter query json
 import Foundation
 
 struct TweetQuery: Codable {
