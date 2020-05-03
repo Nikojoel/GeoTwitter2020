@@ -1,15 +1,10 @@
-//
-//  NetworkService.swift
-//  geoTwitter
-//
-//  Created by iosdev on 20.4.2020.
-//  Copyright © 2020 enarm. All rights reserved.
-//
-
 import Foundation
 import OAuthSwift
 import RxSwift
-
+/**
+Network service for twitter api using oauth 1.0b.
+init with Oauth1Swift and tokens from userdefaults
+*/
 class NetworkService {
     private var oauth: OAuth1Swift?
     
@@ -26,16 +21,20 @@ class NetworkService {
         )
         oauth?.client.credential.oauthToken = userToken
         oauth?.client.credential.oauthTokenSecret = userSecret
-        
     }
     
+    /**
+     Get request with oauth.
+     - Parameters:
+        - url: string
+     - Returns:
+        - Generic Observable
+     */
     func requestGET<T:Decodable>(url: String) -> Observable<T> {
         return Observable.create { observer -> Disposable in
             self.oauth?.client.get(url) { result in
                 switch result {
                 case .success(let response):
-//                    let string = String(data: response.data, encoding: .utf8)
-//                    print(string)
                     do {
                         let decoder = JSONDecoder()
                         let decoded = try decoder.decode(T.self, from: response.data)
@@ -48,13 +47,11 @@ class NetworkService {
                     print(error)
                 }
             }
-            return Disposables.create {
-               
-            }
+            return Disposables.create()
         }
     }
     
-    
+    /// Post request with oauth
     func requestPOST(url: String, body: String, parameters: [String:String] = [:], headers: [String:String] = [:] ) {
         let data = body.data(using: .ascii)
         self.oauth?.client.post(url, parameters: [:], headers: headers, body: data) { result in

@@ -1,15 +1,7 @@
-//
-//  AccountViewController.swift
-//  geoTwitter
-//
-//  Created by iosdev on 20.4.2020.
-//  Copyright © 2020 enarm. All rights reserved.
-//
-
 import UIKit
 import Kingfisher
 import RxSwift
-
+/// Displays logged in user profile
 class AccountViewController: UIViewController {
 
     @IBOutlet weak var profileImage: UIImageView!
@@ -31,7 +23,7 @@ class AccountViewController: UIViewController {
              print("next")
          self?.account = item
          var img = item.profile_image_url_https
-         let range = img.index(img.endIndex, offsetBy: -11)..<img.endIndex
+         let range = img.index(img.endIndex, offsetBy: -11)..<img.endIndex // better image quality
          img.removeSubrange(range)
          img.insert(contentsOf: ".jpg", at: img.endIndex)
          self?.profileImage.kf.setImage(with: URL(string: img))
@@ -42,13 +34,13 @@ class AccountViewController: UIViewController {
          self?.desc.text = item.description
          }).disposed(by: disposeBag)
     }
+    
+    // logout button functionality. Deletes credentials from userdefaults
     @IBAction func logOutButton(_ sender: Any) {
         let userData = UserDefaults.standard
         userData.removeObject(forKey: "userToken")
         userData.removeObject(forKey: "userSecret")
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
-    
-    
 }
       
