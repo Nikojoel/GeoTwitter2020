@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct WoeId: Codable {
+    let woeid: Int
+}
+
 struct TrendQuery: Codable {
     let trends: [Trend]
     let asOf, createdAt: String

@@ -165,6 +165,7 @@
 		6A23ADCF245AB2E70040B251 /* Archive */ = {
 			isa = PBXGroup;
 			children = (
+				6AAADE24245B0EEE00BC0C33 /* APIfetchT.swift */,
 				6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */,
 				6A00BAB72448606800C633B0 /* APIfetch.swift */,
 			);
@@ -278,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				6A2D8D03244EDC3300270DD6 /* NetworkServiceNoAuth.swift */,
-				6AAADE24245B0EEE00BC0C33 /* APIfetchT.swift */,
 				6A2D8D04244EDC3300270DD6 /* ReverseGeoApi.swift */,
 				6A00BAB52448604900C633B0 /* Auth.swift */,
 				6A2D8CE9244CD0A300270DD6 /* EndPoint.swift */,
