@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="86E-0O-Nth">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="86E-0O-Nth">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +12,7 @@
             <objects>
                 <viewController storyboardIdentifier="logInScreen" id="86E-0O-Nth" customClass="LogInViewController" customModule="geoTwitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="49J-Qu-hjh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOZ-RX-rg0">
@@ -22,13 +22,17 @@
                                     <segue destination="yUP-99-5pf" kind="presentation" identifier="showMain" modalPresentationStyle="fullScreen" id="ohS-Li-EkM"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qi2-8s-UTF">
-                                <rect key="frame" x="16" y="154" width="343" height="264"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qi2-8s-UTF">
+                                <rect key="frame" x="36" y="154" width="343" height="264"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="264" id="2Y2-HD-OhQ"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPf-OI-xc3">
-                                <rect key="frame" x="65" y="500" width="245" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPf-OI-xc3">
+                                <rect key="frame" x="85" y="500" width="245" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lap-iH-e0J"/>
+                                </constraints>
                                 <state key="normal" title="Log In" image="signIn"/>
                                 <connections>
                                     <action selector="logIn:" destination="86E-0O-Nth" eventType="touchUpInside" id="mwK-Qt-d2W"/>
@@ -36,6 +40,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5fN-eM-GGi" firstAttribute="trailing" secondItem="tPf-OI-xc3" secondAttribute="trailing" constant="84" id="3ME-2p-nLU"/>
+                            <constraint firstItem="Qi2-8s-UTF" firstAttribute="leading" secondItem="5fN-eM-GGi" secondAttribute="leading" constant="36" id="3xS-Ij-ymc"/>
+                            <constraint firstItem="5fN-eM-GGi" firstAttribute="trailing" secondItem="Qi2-8s-UTF" secondAttribute="trailing" constant="35" id="4MB-M5-qAe"/>
+                            <constraint firstItem="tPf-OI-xc3" firstAttribute="leading" secondItem="5fN-eM-GGi" secondAttribute="leading" constant="85" id="BtI-0V-8oI"/>
+                            <constraint firstItem="Qi2-8s-UTF" firstAttribute="top" secondItem="5fN-eM-GGi" secondAttribute="top" constant="110" id="avX-lh-N7H"/>
+                            <constraint firstItem="tPf-OI-xc3" firstAttribute="top" secondItem="Qi2-8s-UTF" secondAttribute="bottom" constant="82" id="wuF-1q-O9r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5fN-eM-GGi"/>
                     </view>
                 </viewController>
