@@ -107,7 +107,7 @@
 		6A481A482456E7430050A58D /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6A540F7824509594001D40D6 /* DirectMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessageTableViewCell.swift; sourceTree = "<group>"; };
 		6A540F7A2450A84E001D40D6 /* UserMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessagesViewController.swift; sourceTree = "<group>"; };
-		6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetInfo.swift; sourceTree = "<group>"; };
+		6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TweetInfo.swift; path = ../Models/TweetInfo.swift; sourceTree = "<group>"; };
 		6AAADE1C245B067900BC0C33 /* TrendQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendQuery.swift; sourceTree = "<group>"; };
 		6AAADE20245B079000BC0C33 /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
 		6AAADE22245B07C400BC0C33 /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
@@ -165,6 +165,7 @@
 		6A23ADCF245AB2E70040B251 /* Archive */ = {
 			isa = PBXGroup;
 			children = (
+				6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */,
 				6A00BAB72448606800C633B0 /* APIfetch.swift */,
 			);
 			path = Archive;
@@ -246,7 +247,6 @@
 			children = (
 				6A2D8D08244EDF1600270DD6 /* TweetLocation.swift */,
 				6AAADE1C245B067900BC0C33 /* TrendQuery.swift */,
-				6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */,
 				6A3157042446F89C00DD4E75 /* TweetQuery.swift */,
 				6A2D8CF5244D74CE00270DD6 /* Account.swift */,
 				6A2D8CF7244D7B8700270DD6 /* MyMessages.swift */,
