@@ -25,7 +25,7 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     }
     
     func setPlaceholder() {
-        inputText.text = "Are you sure the world wants to see this?"
+        inputText.text = "..."
         inputText.textColor = UIColor.lightGray
     }
     
