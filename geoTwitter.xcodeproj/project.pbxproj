@@ -40,7 +40,6 @@
 		6A481A452456E7370050A58D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A481A472456E7370050A58D /* Localizable.strings */; };
 		6A540F7924509594001D40D6 /* DirectMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A540F7824509594001D40D6 /* DirectMessageTableViewCell.swift */; };
 		6A540F7B2450A84E001D40D6 /* UserMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A540F7A2450A84E001D40D6 /* UserMessagesViewController.swift */; };
-		6A9A97AB2445D2FA00122F12 /* TweetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */; };
 		6AAADE1D245B067900BC0C33 /* TrendQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAADE1C245B067900BC0C33 /* TrendQuery.swift */; };
 		6AAADE21245B079000BC0C33 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAADE20245B079000BC0C33 /* TrendViewController.swift */; };
 		6AAADE23245B07C400BC0C33 /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAADE22245B07C400BC0C33 /* TrendTableViewCell.swift */; };
@@ -166,7 +165,6 @@
 		6A23ADCF245AB2E70040B251 /* Archive */ = {
 			isa = PBXGroup;
 			children = (
-				6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */,
 				6A00BAB72448606800C633B0 /* APIfetch.swift */,
 			);
 			path = Archive;
@@ -495,7 +493,6 @@
 				6A2D8CEA244CD0A300270DD6 /* EndPoint.swift in Sources */,
 				6A2D8CF6244D74CE00270DD6 /* Account.swift in Sources */,
 				6A2D8D1324501ADB00270DD6 /* DirectMessagesViewController.swift in Sources */,
-				6A9A97AB2445D2FA00122F12 /* TweetInfo.swift in Sources */,
 				6AAADE25245B0EEE00BC0C33 /* APIfetchT.swift in Sources */,
 				6A00BAB82448606800C633B0 /* APIfetch.swift in Sources */,
 				6A00BAB62448604900C633B0 /* Auth.swift in Sources */,
