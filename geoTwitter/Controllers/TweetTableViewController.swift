@@ -1,10 +1,11 @@
-/**
- Tableview controller for displaying list of tweets with user inputed search string
- */
 import UIKit
 import RxSwift
 import Kingfisher
 
+/**
+Tableview controller for displaying list of tweets with user inputed search string.
+Extended with uiserachbardelegate
+*/
 class TweetTableViewController: UITableViewController {
     
     @IBOutlet var tweetTableView: UITableView!
@@ -22,6 +23,7 @@ class TweetTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
@@ -42,15 +44,11 @@ class TweetTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return tweets.count
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return tweets[section].tweet.count
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

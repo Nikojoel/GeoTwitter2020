@@ -9,6 +9,7 @@ import RxSwift
  - showDirectMessage: shows a message based of id
  - showUser: show a user by id
  - postDirectMessage: send a new private message
+ - postTweet: post a new tweet from logged in user
  */
 class TwitterApi {
     private let networkService = NetworkService()
@@ -74,7 +75,12 @@ class TwitterApi {
         let header = ["Content-Type":"application/json"]
         networkService.requestPOST(url: baseURL + EndPoint.newMessage.rawValue, body: data, headers: header)
     }
-    
+    /**
+     Post a new tweet from logged in user
+     Message will be percentencoded.
+     - Parameters:
+        - message: message string
+     */
     func postTweet(message: String) {
         let encoded = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         networkService.requestPOST(url: baseURL + EndPoint.newTweet.rawValue + "?status=\(encoded ?? "")", body: "")

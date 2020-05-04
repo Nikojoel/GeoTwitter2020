@@ -166,6 +166,7 @@
 		6A23ADCF245AB2E70040B251 /* Archive */ = {
 			isa = PBXGroup;
 			children = (
+				6A9A97AA2445D2FA00122F12 /* TweetInfo.swift */,
 				6A00BAB72448606800C633B0 /* APIfetch.swift */,
 			);
 			path = Archive;
