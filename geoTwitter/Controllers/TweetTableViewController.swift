@@ -22,11 +22,23 @@ class TweetTableViewController: UITableViewController {
             loadingIndicator.isHidden = true
         }
     }
+    var trend: String? {
+        willSet {
+            disposable = twitterApi.searchTweet(newValue ?? "")
+                .subscribe({ [weak self] in
+                    if let result = $0.element {
+                        self?.tweets.insert(result, at: 0)
+                    }
+            })
+        }
+    }
+
     
     // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

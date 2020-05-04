@@ -10,6 +10,8 @@ import RxSwift
  - showUser: show a user by id
  - postDirectMessage: send a new private message
  - postTweet: post a new tweet from logged in user
+ - getTrends: gets the trending topics based of device location
+ - getClosestWoeId: get the woeid based of device location
  */
 class TwitterApi {
     private let networkService = NetworkService()
@@ -84,5 +86,22 @@ class TwitterApi {
     func postTweet(message: String) {
         let encoded = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         networkService.requestPOST(url: baseURL + EndPoint.newTweet.rawValue + "?status=\(encoded ?? "")", body: "")
+    }
+    /**
+     Get trending topics.
+     - Parameters:
+        - id: woeid as a string(1 for global default)
+     */
+    func getTrends(id: String = "1") -> Observable<[TrendQuery]> {
+        return networkService.requestGET(url: baseURL + EndPoint.getTrends.rawValue + "?id=\(id)")
+    }
+    /**
+     Get woeid closest to device location
+     - Parameters:
+        - lat: latitude double
+        - long: longitude double
+     */
+    func getClosesWoeId(lat: Double, long: Double) -> Observable<[WoeId]> {
+        return networkService.requestGET(url: baseURL + EndPoint.getClosestWOEID.rawValue + "?lat=\(lat)&long=\(long)")
     }
 }
