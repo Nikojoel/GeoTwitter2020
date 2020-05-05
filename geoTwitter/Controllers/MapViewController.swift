@@ -10,6 +10,14 @@ import UIKit
 import MapKit
 import RxSwift
 
+/**
+Mapview controlller for displaying MKMapView and all business logic behind it.
+ Extended with UiSearchBarDelegate
+ - viewDidLoad
+ - searchForTweets
+ - reverseGeoCode
+*/
+
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
@@ -33,6 +41,10 @@ class MapViewController: UIViewController {
         searchBar.delegate = self
     }
     
+    /**
+    Initiates observers that handle incoming Tweet data
+     - Parameters: keyWord: String - Actual keyword the user inputs
+     */
     func searchForTweets(_ keyWord: String) {
         var temp = [Tweet]()
         var tweetData = [[Tweet]]()
@@ -55,9 +67,12 @@ class MapViewController: UIViewController {
             }).disposed(by: self.disposeBag)
         }).disposed(by: disposeBag)
     }
-    
+    /**
+      Reverse geocodes the tweet given in the parameter
+     - Parameters: tweet: Tweet - Reverse geocodable tweet
+     */
     func reverseGeoCode(_ tweet: Tweet) {
-    api.useReverseGeoCode(tweet.user.location).subscribe(onNext: {item in
+        api.useReverseGeoCode(tweet.user.location).subscribe(onNext: {item in
             // Insert more data to the annotation
             let annotation = MKPointAnnotation()
             if item.results.count != 0 {

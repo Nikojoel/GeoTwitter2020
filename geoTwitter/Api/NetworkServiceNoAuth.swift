@@ -10,12 +10,15 @@ import Foundation
 import OAuthSwift
 import RxSwift
 /**
-Class for network operations with no authentication
+Class for network operations with no OAuthSwift authentication
 - apiFetchGET:  http request to fetch from the api
 */
 
 class NetworkServiceNoAuth {
-    
+    /**
+    Creates an api standard query to fetch and decode data
+     - Returns: an Observable typed struct
+     */
     func apiFetchGET<T:Decodable>(url: String) -> Observable<T> {
         return Observable.create { observer -> Disposable in
             

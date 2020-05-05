@@ -1,5 +1,5 @@
 //
-//  Auth2.swift
+//  Auth.swift
 //  geoTwitter
 //
 //  Created by iosdev on 16.4.2020.
@@ -8,15 +8,22 @@
 import Foundation
 import OAuthSwift
 import RxSwift
-
+/**
+Class for secure authentication using OAuthSwift framework
+ - authUserToken: authenticates the user with OAuthSwift
+*/
 class Auth {
     
     private var oAuth: OAuth1Swift?
     
+    /**
+    Creates OAuthSwift object and retains it, authenticates user on call
+     - Returns: an Observable typed boolean
+     */
     func authUserToken() -> Observable<Bool> {
-        // Create an instance and retain it
         return Observable.create { observer -> Disposable in
             
+            // Create an instance and retain it
             self.oAuth = OAuth1Swift(
                 consumerKey:    Keys.consumerKey.rawValue,
                 consumerSecret: Keys.consumerSecret.rawValue,
@@ -38,14 +45,10 @@ class Auth {
                 case .failure(let error):
                     observer.onError(error)
                     print(error.localizedDescription)
-                    
                 }
             }
             return Disposables.create {
-                
             }
-            
         }
-        
     }
 }

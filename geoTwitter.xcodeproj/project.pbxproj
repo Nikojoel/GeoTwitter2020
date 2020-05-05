@@ -12,7 +12,6 @@
 		6A00BAB62448604900C633B0 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00BAB52448604900C633B0 /* Auth.swift */; };
 		6A00BAB82448606800C633B0 /* APIfetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00BAB72448606800C633B0 /* APIfetch.swift */; };
 		6A23ADC024575D800040B251 /* NewTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23ADBF24575D800040B251 /* NewTweetViewController.swift */; };
-		6A23ADCA2458480F0040B251 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23ADC8245847720040B251 /* Keys.swift */; };
 		6A23ADCC245977620040B251 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A23ADCB245977620040B251 /* LogIn.storyboard */; };
 		6A23ADCE24597A730040B251 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23ADCD24597A730040B251 /* LogInViewController.swift */; };
 		6A2D8CEA244CD0A300270DD6 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8CE9244CD0A300270DD6 /* EndPoint.swift */; };
@@ -44,6 +43,7 @@
 		6AAADE21245B079000BC0C33 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAADE20245B079000BC0C33 /* TrendViewController.swift */; };
 		6AAADE23245B07C400BC0C33 /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAADE22245B07C400BC0C33 /* TrendTableViewCell.swift */; };
 		6AAADE25245B0EEE00BC0C33 /* APIfetchT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAADE24245B0EEE00BC0C33 /* APIfetchT.swift */; };
+		755B753224615C8000A8AAB9 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B753124615C8000A8AAB9 /* Keys.swift */; };
 		DA2CFE757DA370E434042ABB /* Pods_geoTwitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC732DF73955292D0F6131C4 /* Pods_geoTwitter.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +70,6 @@
 		6A00BAB52448604900C633B0 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		6A00BAB72448606800C633B0 /* APIfetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIfetch.swift; sourceTree = "<group>"; };
 		6A23ADBF24575D800040B251 /* NewTweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetViewController.swift; sourceTree = "<group>"; };
-		6A23ADC8245847720040B251 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		6A23ADCB245977620040B251 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		6A23ADCD24597A730040B251 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		6A2D8CE9244CD0A300270DD6 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -113,7 +112,7 @@
 		6AAADE22245B07C400BC0C33 /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
 		6AAADE24245B0EEE00BC0C33 /* APIfetchT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIfetchT.swift; sourceTree = "<group>"; };
 		7535D8F4245189B500A66193 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = ../Keys.swift; sourceTree = "<group>"; };
-		75E668122458269D00F5747C /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = ../Keys.swift; sourceTree = "<group>"; };
+		755B753124615C8000A8AAB9 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = ../../.Trash/Keys.swift; sourceTree = "<group>"; };
 		9DBB6CE793D9345FC464FBE3 /* Pods-geoTwitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geoTwitter.release.xcconfig"; path = "Target Support Files/Pods-geoTwitter/Pods-geoTwitter.release.xcconfig"; sourceTree = "<group>"; };
 		AC732DF73955292D0F6131C4 /* Pods_geoTwitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_geoTwitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF9B8765AF3C52370F5EFDD /* Pods-geoTwitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geoTwitter.debug.xcconfig"; path = "Target Support Files/Pods-geoTwitter/Pods-geoTwitter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,9 +185,8 @@
 		6A3EC1F4243C656700D82314 = {
 			isa = PBXGroup;
 			children = (
-				6A23ADC8245847720040B251 /* Keys.swift */,
+				755B753124615C8000A8AAB9 /* Keys.swift */,
 				6A481A472456E7370050A58D /* Localizable.strings */,
-				75E668122458269D00F5747C /* Keys.swift */,
 				6A3EC1FF243C656700D82314 /* geoTwitter */,
 				6A3EC219243C656900D82314 /* geoTwitterTests */,
 				6A3EC224243C656900D82314 /* geoTwitterUITests */,
@@ -475,7 +473,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AAADE21245B079000BC0C33 /* TrendViewController.swift in Sources */,
-				6A23ADCA2458480F0040B251 /* Keys.swift in Sources */,
 				6A3157062447173400DD4E75 /* TweetQuery.swift in Sources */,
 				6A3EC201243C656700D82314 /* AppDelegate.swift in Sources */,
 				6A3EC203243C656700D82314 /* SceneDelegate.swift in Sources */,
@@ -502,6 +499,7 @@
 				6A2D8CF8244D7B8700270DD6 /* MyMessages.swift in Sources */,
 				6A540F7B2450A84E001D40D6 /* UserMessagesViewController.swift in Sources */,
 				6A2D8CEC244D5D3300270DD6 /* NetworkService.swift in Sources */,
+				755B753224615C8000A8AAB9 /* Keys.swift in Sources */,
 				6A00BAB42448571E00C633B0 /* SingleTweetController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
