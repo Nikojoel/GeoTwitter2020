@@ -10,14 +10,14 @@ Some basic features from Twitter are also included
 Application was developed with sprints each lasting for four days with total of four sprints completed.
 #### Original GitLab [repository](https://gitlab.com/Mariinsky/geotwitter2020) with all creators and branches
 
-#### Features
+#### Frameworks used
 * RxSwift
 * KingFisher
-* NsPredicate
 * OAuthSwift
 #### APIs used
 * Twitter
 * OpenCage
-
+#### Dependency manager used
+* CocoaPods
 
 
