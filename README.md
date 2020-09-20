@@ -1,6 +1,7 @@
 # GeoTwitter2020
-
+### Description
 GeoTwitter is an iOS application based off of Twitter's available reverse geocodable data. It can pinpoint the city from where the tweet was tweeted and display it on a map.
+
 Some basic features from Twitter are also included,
 * Authentication via Twitter
 * Direct messages
